@@ -1,0 +1,293 @@
+.bodyy{
+       
+   
+    width: 100vw;
+    /*height: 100vh;*/
+    display: flex;
+    justify-content: center;
+    
+    flex-direction: row;
+    background-image: url(supermarket2.jpg);
+    background-size: 100% 100%;
+    
+    
+    
+     
+    
+
+
+}
+.shade{
+    
+    
+    width: 100vw;
+   
+    display: flex;
+    justify-content: center;
+
+    flex-direction: row;
+    
+
+    background-color: rgba(128,0,0,0.7);
+}
+.border1{
+  height: 600px;
+  width: 450px;
+  border: 10px solid white;
+  border-radius: 25px; 
+  margin-top: 1%;
+  
+
+
+}
+.box1{
+border: 2px solid white; 
+
+width: 400px;
+height: 550px;
+flex-direction: column;
+border-radius: 25px;
+margin-left: 25px;
+
+
+}
+#img{
+    margin-top: 25px;
+    margin-left: 35% ;
+     margin-bottom: 20px;
+    width: 100px;
+    height: 100px;
+    
+}#social{
+
+    width: 50px;
+    height: 50px;
+ 
+
+
+}
+.icons{
+   margin-bottom: 10px;
+   margin-top: 10%;
+    width: 200px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+  /*  margin-left:100px;*/
+  margin-left: 25% ;
+}
+
+.signIn{
+    
+display: flex;
+justify-content: center;
+flex-direction: column;
+width: 200px;
+margin-left: 25% ;
+margin-top: 10px;
+position: relative;
+
+}
+.signup2{
+margin-top: 5px;
+margin-bottom: 5px;
+border:none;
+background: none;
+
+
+
+
+}
+.extra{
+    justify-content: row;
+}
+.label{
+    margin-top: 5px;
+    border: 2px solid whitesmoke;
+    border-radius: 25px;
+    height: 30px;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+.signup2:hover{
+background-color:maroon;
+color:maroon;
+
+
+}
+#button1{
+border: 3px solid white;
+background: none;
+color: white;
+width:150px;
+margin-top: 4%;
+margin-left: 15px;
+height: 40px;
+font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.forma2{
+    
+       
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    width: 200px;
+    margin-left: 25% ;
+    margin-top: 10px;
+    position: relative;
+       
+        
+    
+}
+.middlepart {
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: maroon;
+    width: auto;
+    height: auto;
+}
+
+.footer {
+    display: flex;
+    flex-direction: column;
+    background-color: maroon;
+    width: 100vw;
+    height: 25vh;
+    color: white;
+    position: relative;
+    margin-right: inherit;
+    bottom: 0;
+    
+}
+
+.pckMrk {
+    display: flex;
+    font-family: Calibri;
+    font-size: 45px;
+    justify-content: justify;
+    background-color: maroon;
+    color: white;
+    text-align: justify;
+}
+
+.downmenu {
+    display: flex;
+    justify-content: center;
+    flex-direction: row;
+    color: white;
+    font-family: 'Calibri';
+    margin-left: 30%;
+}
+
+#footbtn {
+    width: 40%;
+    height: auto;
+    border-color: white;
+    margin-top: 1%;
+    background-color: maroon;
+    color: white;
+}
+
+#footbtn:hover {
+    background-color: silver;
+}
+
+#aboutus {
+    justify-content: right;
+    color: white;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    cursor: pointer;
+    background-color: maroon;
+    border: none;
+    margin-left: 6%;
+    box-shadow: none;
+}
+
+.footbx2:hover {
+    border-color: white;
+}
+
+#copy {
+    color: white;
+    justify-content: center;
+    font-family: 'Calibri';
+    background-color: maroon;
+    display: flex;
+}
+
+.oc {
+    color: white;
+    font-family: 'Calibri';
+    display: flex;
+    margin-right: 5%;
+}
+
+.footbx2 {
+    display: flex;
+    flex-direction: row;
+}
+
+.bsh {
+    width: 50px;
+    height: 50px;
+}
+
+.photos3 {
+    justify-content: right;
+    flex-direction: row;
+    margin-top: 10%;
+    margin-left: 5%;
+}
+
+.footbx3 {
+    display: flex;
+    flex-direction: row;
+    margin-left: 85%;
+     color: white;
+    
+}
+.role {
+    margin-top: 5px;
+    margin-bottom: 5px;
+    border:5px;
+   
+    
+}
+@media only screen and  (max-width: 375px){
+    .footbx3{
+      margin-left: 10%;
+    }
+    .footbx2{
+        margin-top: 5px;
+        margin-bottom: 5px;
+    }
+    .bodyy{
+        width: 100%;
+      
+        margin-right: 0;
+        margin-bottom: 0;
+        margin-left: 0;
+    }
+    .border1{
+
+          
+        width: 100%;
+        margin-left: 0;
+    }
+    .box1{
+        width:80%;
+        
+    }
+    .footer{
+       
+        width: 100%;
+        
+    }
+    .middlepart{
+        margin-left:15%;
+    }
+    
+    
+
+}
