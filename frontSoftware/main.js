@@ -21,8 +21,9 @@ function validate(form) {
         username: $("#username").val(),
         password: $("#password").val()
     }
-
-    if (login[username] == "" && login[password] == "") {
+    var input = document.getElementById("username").value;
+    var input1 = document.getElementById("password").value;   
+    if (input.trim() == "" && input1.trim() == "") {
         alert('please fill data')
         return;
     }
@@ -45,13 +46,13 @@ $("#submit").click(function(e) {
     console.log(login);
 
     $.ajax({
-        url: "http://localhost:8080/api/employee/login",
+        url: "http://localhost:8080/api/user/login",
         type: 'post',
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         data: JSON.stringify(login),
         success: function(res) {
-            localStorage.setItem('employee', JSON.stringify(res))
+            localStorage.setItem('professor', JSON.stringify(res))
             goToDashboard();
         },
         error: function(request, status, error) {
@@ -62,11 +63,11 @@ $("#submit").click(function(e) {
 });
 
 function goToDashboard() {
-    window.location.href = "dashboard.html";
+    window.location.href = "prov.html";
 }
 
 function showUserData() {
-    var emp = JSON.parse(localStorage.getItem('employee'));
+    var emp = JSON.parse(localStorage.getItem('professor'));
 
     var rows = createRows(emp.tasks)
     var index = 0;
@@ -75,7 +76,7 @@ function showUserData() {
     }
 }
 
-function createRows(tasks) {
+/*function createRows(tasks) {
     var index = 0;
     var rows = [];
     while (index < tasks.length) {
@@ -94,4 +95,4 @@ function createRows(tasks) {
         index++;
     }
     return rows;
-}
+}*/
