@@ -16,7 +16,7 @@ function changeForm(form) {
 function validate(form) {
     let inputs = document.querySelectorAll("input");
     let test = document.getElementsByTagName("input");
-
+   if(form == 0){
     login = {
         username: $("#username").val(),
         password: $("#password").val()
@@ -35,6 +35,70 @@ function validate(form) {
     // }
     return true
 }
+else if (form == 1){
+    register = {
+       // id:$("#profid").val(),
+        name:$("#name2").val(),
+        degree:$("#degree").val(),
+        email:$("#emaili").val(),
+        password: $("#password2").val(),
+        username: $("#username2").val()
+       
+      
+    }
+   // var input1 = document.getElementById("profid").value;
+    var input2 = document.getElementById("name2").value;
+    var input3 = document.getElementById("emaili").value;
+    var input4 = document.getElementById("username2").value;
+    var input5 = document.getElementById("password2").value;
+    var input6 = document.getElementById("degree").value;   
+    if ( input2.trim() == "" && input3.trim() == ""
+    && input4.trim() == "" && input5.trim() == "" && input6.trim() == "") {
+        alert('please fill data')
+        return;
+    }
+
+    // if (form == 0 && login[username] == "" && login[password] == "") {
+    //     return false;
+    // } else if (form == 1 && inputs[3].value == "" && inputs[4].value == "" && inputs[5].value == "") {
+    //     return false;
+    // }
+    return true
+}
+}
+
+/*function validate2(form) {
+    let inputs = document.querySelectorAll("input");
+    let test = document.getElementsByTagName("input");
+
+    register = {
+        id:$("#profid").val(),
+        name:$("#name").val(),
+        email:$("#emaili").val(),
+        username: $("#username2").val(),
+        password: $("#password2").val(),
+        degree:$("#degree").val()
+    }
+    var input1 = document.getElementById("profid").value;
+    var input2 = document.getElementById("name").value;
+    var input3 = document.getElementById("emaili").value;
+    var input4 = document.getElementById("username2").value;
+    var input5 = document.getElementById("password2").value;
+    var input6 = document.getElementById("degree").value;   
+    if (input1.trim() == "" && input2.trim() == "" && input3.trim() == ""
+    && input4.trim() == "" && input5.trim() == "" && input6.trim() == "") {
+        alert('please fill data')
+        return;
+    }
+
+    // if (form == 0 && login[username] == "" && login[password] == "") {
+    //     return false;
+    // } else if (form == 1 && inputs[3].value == "" && inputs[4].value == "" && inputs[5].value == "") {
+    //     return false;
+    // }
+    return true
+}*/
+
 var login = {
     username: "",
     password: ""
@@ -65,6 +129,39 @@ $("#submit").click(function(e) {
 function goToDashboard() {
     window.location.href = "prov.html";
 }
+
+var register ={
+    
+    name:"",
+    degree:"",
+    email:"",
+    password: "",
+    username: ""
+    
+
+}
+$("#submitRegister").click(function(e) {
+    validate(1)
+    e.preventDefault();
+    console.log(register);
+
+    $.ajax({
+        url: "http://localhost:8080/api/user/registre",
+        type: 'post',
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        data: JSON.stringify(register),
+        success: function(res) {
+            localStorage.setItem('professor', JSON.stringify(res))
+            goToDashboard();
+        },
+        error: function(request, status, error) {
+            console.log(error);
+            console.log(status);
+        }
+    })
+});
+
 
 function showUserData() {
     var emp = JSON.parse(localStorage.getItem('professor'));
