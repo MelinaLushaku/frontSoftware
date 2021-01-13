@@ -4,14 +4,17 @@
 }
 
 .upper {
-    margin: 0;
-    width: 100vw;
-    height: 25vh;
+    width: 100%;
+    height: 250px;
     display: flex;
     flex-direction: row;
-    background-color:white;
-    background-image: url('document.png');
+    background-image: url('');
     justify-content: stretch;
+    background-color: rgba(0, 98, 128, 0.644);
+}
+
+.shade {
+    background-color: rgba(0, 98, 128, 0.644);
 }
 
 .middle-mid {
@@ -53,7 +56,7 @@
     position: relative;
     top: 0px;
     left: 60px;
-    color:blue;
+    color: #044A50;
 }
 
 .detail {
@@ -87,7 +90,7 @@
 }
 
 .slider-box:hover {
-    box-shadow: 2px 2px 12px rgba(47, 47, 47, 0.40);
+    box-shadow: 2px 2px 12px#044A50;
 }
 
 .slider-box:hover .img-box img {
@@ -103,8 +106,7 @@
 }
 
 .swiper-container {
-    width: 25%;
-    box-sizing: border-box;
+    justify-content: left;
 }
 
 .swiper-wrapper {
@@ -126,13 +128,13 @@
 .rks {
     font-size: 18px;
     font-family: 'Segoe UI';
-    color:black(78, 68, 68);
+    color: white;
 }
 
 .pocketMarket {
     font-size: 60px;
     font-family: 'Gill Sans';
-    color:white;
+    color: white;
 }
 
 #btn {
@@ -169,22 +171,21 @@
     justify-content: center;
     text-align: center;
     margin-left: 20%;
-    font-family: 'Gill Sans';
-    margin-top: 5%;
+    margin-top: 14%;
 }
 
 .over {
     margin: 0;
     font-size: 45px;
-    font-family: 'bold';
-    color:black;
+    font-family: 'Segoe UI';
+    color: white;
 }
 
 .choose {
     margin: 0;
     font-size: 28px;
-    font-family:  'Gill Sans';
-    color:blacks;
+    font-family: 'Segoe Print';
+    color: white;
 }
 
 .lower {
@@ -225,10 +226,29 @@
     display: flex;
     flex-direction: row;
     width: 25vh;
-    background-color: #33F0FF;
+    background-color: #044A50;
     opacity: 95%;
-    height: 15vh;
-    margin-top: 15%;
+    height: 100vh;
+}
+
+#foldername {
+    justify-content: left;
+    font-size: 30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: black;
+}
+
+#addfolder {
+    height: 50px;
+    width: 100px;
+    background-color: #044A50;
+    color: wheat;
+    margin-left: 500px;
+}
+
+#addfolder:hover {
+    background-color: wheat;
+    color: #044A50;
 }
 
 .slides {
@@ -241,17 +261,18 @@
     justify-content: left;
     flex-direction: column;
     display: flex;
-    margin-top: 10%;
     margin-left: 20%;
     width: 60vw;
+    background-color: #044A50;
 }
 
 .nmenubtn {
-    border-color: #33F0FF;    
+    border-color: #044A50;
     font-size: 25px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: white;
-    background-color:#33F0FF;    ;
+    background-color: #044A50;
+    margin-top: 10%;
     border-style: none;
     transition: all .2s ease-in-out;
     width: 100px;
@@ -265,8 +286,6 @@
 * {
     box-sizing: border-box
 }
-
-
 /* Slideshow container */
 
 .slideshow-container {
@@ -274,18 +293,12 @@
     height: 315px;
     position: relative;
 }
-
-
 /* Hide the images by default */
 
 .mySlides {
     display: none;
 }
-
-
 /* Next & previous buttons */
-
-
 /* Caption text */
 
 .text {
@@ -297,8 +310,6 @@
     width: 100%;
     text-align: center;
 }
-
-
 /* Number text (1/3 etc) */
 
 .numbertext {
@@ -308,8 +319,6 @@
     position: absolute;
     top: 0;
 }
-
-
 /* The dots/bullets/indicators */
 
 .dot {
@@ -324,12 +333,12 @@
 }
 
 .btn {
-    border-color: maroon;
+    border-color: #044A50;
     width: 150px;
     height: 55px;
     border-radius: 5%;
     background-color: white;
-    color:;
+    color: #044A50;
     font-size: 20px;
     justify-content: space-around;
     margin-top: 5%;
@@ -344,11 +353,11 @@
 }
 
 .btn1 {
-    border-color: maroon;
+    border-color: #044A50;
     width: 150px;
     height: 55px;
     border-radius: 25px 25px 25px 25px;
-    background-color: maroon;
+    background-color: #044A50;
     color: white;
     font-size: 20px;
     justify-content: space-around;
@@ -369,13 +378,13 @@
     /* or absolute */
     top: 30%;
     left: 40%;
-    margin-bottom: 10%;
+    margin-top: 5%;
 }
 
 .label {
     clear: left;
     text-align: right;
-    color: ;
+    color: #044A50;
     font-size: 20px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
@@ -417,11 +426,9 @@
 .form-header {
     margin: 0;
     font-size: 40px;
-    font-family: 'Gill Sans';
-    color: black;
+    font-family: 'Segoe UI';
+    color: #044A50;
 }
-
-
 /* Fading animation */
 
 .fade {
@@ -465,7 +472,7 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
-    background-color: #33F0FF;
+    background-color: #044A50;
     width: auto;
     height: auto;
 }
@@ -473,15 +480,14 @@
 .footer {
     display: flex;
     flex-direction: column;
-    background-color: #33F0FF;
+    background-color: #044A50;
     width: 100vw;
     height: 25vh;
     color: white;
-  
-    
+    position: relative;
+    margin-right: inherit;
     bottom: 0;
     margin-top: 10%;
-    justify-content: ;
 }
 
 .pckMrk {
@@ -489,18 +495,19 @@
     font-family: Calibri;
     font-size: 45px;
     justify-content: justify;
-    background-color: #33F0FF;
+    background-color: #044A50;
     color: white;
     text-align: justify;
 }
 
 .downmenu {
     display: flex;
-    justify-content: left;
+    justify-content: center;
     flex-direction: row;
     color: white;
     font-family: 'Calibri';
     margin-left: 30%;
+    background-color: #044A50;
 }
 
 #footbtn {
@@ -508,7 +515,7 @@
     height: auto;
     border-color: white;
     margin-top: 1%;
-    background-color: maroon;
+    background-color: #044A50;
     color: white;
     transition: all .2s ease-in-out;
 }
@@ -522,7 +529,8 @@
     color: white;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     cursor: pointer;
-    background-color: maroon;
+    background-color: #044A50;
+    ;
     border: none;
     margin-left: 6%;
     box-shadow: none;
@@ -536,11 +544,10 @@
     color: white;
     justify-content: center;
     font-family: 'Calibri';
-    background-color: #33F0FF;
-    position: relative;
+    background-color: #044A50;
     display: flex;
+    position: relative;
     bottom: 0;
-   
 }
 
 .oc {
@@ -574,55 +581,44 @@
     color: white;
 }
 
-@media only screen and  (max-width: 375px){
-    
-    .footbx2{
-          margin-top: 5px;
-          margin-bottom: 5px;
+@media only screen and (max-width: 375px) {
+    .footbx2 {
+        margin-top: 5px;
+        margin-bottom: 5px;
     }
-     
-    .footer{
-       display: flex;
-       flex-direction: column;
-       margin-top: 50%; 
-       
-        
-
-        
-        
+    .footer {
+        display: flex;
+        flex-direction: column;
+        margin-top: 50%;
     }
-    .footbx3{
-         margin-left: 10%;
-
+    .footbx3 {
+        margin-left: 10%;
     }
-  
-    .middle{
-        width:150px;
+    .middle {
+        width: 150px;
     }
-    .nmenubtn{
-        font-size:20px;
+    .nmenubtn {
+        font-size: 20px;
     }
-    .titulli{
+    .titulli {
         font-size: 25px;
     }
-    .titulli1{
-        font-size:20px;
+    .titulli1 {
+        font-size: 20px;
     }
-    .btn1{
-        margin-left:5%;
+    .btn1 {
+        margin-left: 5%;
     }
-    .inputi3{
+    .inputi3 {
         margin: 0px 0px 0px 55px;
     }
-    .inputi5{
+    .inputi5 {
         margin: 0px 0px 0px 55px;
     }
-    .inputi1{
-        
-      margin: 0px 0px 0px 55px;
-        
+    .inputi1 {
+        margin: 0px 0px 0px 55px;
     }
-    .inputi2{
+    .inputi2 {
         margin: 0px 0px 0px 55px;
     }
     .swiper-wrapper {
@@ -631,8 +627,8 @@
         grid-column-gap: 5px;
         grid-row-gap: 5px;
     }
-    .slider-box{
-        width:150px;
+    .slider-box {
+        width: 150px;
         height: 150px;
     }
 }
