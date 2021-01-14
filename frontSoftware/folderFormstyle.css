@@ -4,17 +4,18 @@
         }
         
         .upper {
-            width: 100%;
-            height: 250px;
+            width: 100vw;
+            height: 25vh;
             display: flex;
             flex-direction: row;
-            background-image: url('folderBackground.JPG');
+            background-image: url('docInfo.jpg');
             justify-content: stretch;
             background-color: rgba(0, 98, 128, 0.644);
         }
         
         .shade {
             background-color: rgba(0, 98, 128, 0.644);
+            width: 100vw;
         }
         
         .middle-mid {
@@ -68,45 +69,9 @@
             line-height: 35px;
         }
         
-        .price {
-            color: #ffffff;
-            background-color: firebrick;
-            line-height: 20px;
-        }
-        
-        .Cart {
-            position: absolute;
-            bottom: 0px;
-            height: 25px;
-            background-color: firebrick;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        
-        .Cart a {
-            color: #ffffff;
-        }
-        
-        .slider-box:hover {
-            box-shadow: 2px 2px 12px rgba(47, 47, 47, 0.40);
-        }
-        
-        .slider-box:hover .img-box img {
-            transform: scale(1.07);
-            transition: all ease 0.3s;
-        }
-        
-        .Cart:hover {
-            transform: scale(1.1);
-            background-color: rgb(85, 15, 15);
-            box-shadow: 2px 2px 12px rgba(47, 47, 47, 0.40);
-            transition: all ease 0.1s;
-        }
-        
         .swiper-container {
-            justify-content: left;
+            width: 25%;
+            box-sizing: border-box;
         }
         
         .swiper-wrapper {
@@ -128,7 +93,7 @@
         .rks {
             font-size: 18px;
             font-family: 'Segoe UI';
-            color: white;
+            color: #044A50;
         }
         
         .pocketMarket {

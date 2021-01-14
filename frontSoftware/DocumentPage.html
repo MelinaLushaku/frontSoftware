@@ -13,20 +13,22 @@
 <body>
 
     <div class="upper">
-        <div id="box1">
-            <div class="pocketMarket">
-                <b>AcademicDA</b>
+        <div class="shade">
+            <div id="box1">
+                <div class="pocketMarket">
+                    <b>AcademicDA</b>
+                </div>
+
             </div>
 
+            <div id='box2'>
+
+                <div class="choose"> Document Management Web</div>
+
+            </div>
+
+
         </div>
-
-        <div id='box2'>
-
-            <div class="choose"> Document Management Web</div>
-
-        </div>
-
-
     </div>
     </div>
     <div class="lower">
@@ -35,8 +37,8 @@
 
 
             <div class="nenmeny">
-                <button class="nmenubtn" type="menu">Home</button>
-                <button class="nmenubtn" type="menu">Folder</button>
+                <button class="nmenubtn" onclick="location.href='FolderPage.html'" type="menu">Home</button>
+                <button class="nmenubtn" onclick="location.href='DocumentPage.html'" type="menu">Document</button>
                 <button class="nmenubtn" type="menu">Edit Account</button>
 
             </div>
@@ -47,63 +49,66 @@
                         <h2 class="titulli1">Documents</h2>
                     </div>
                     <div class="swiper-container">
-                        
-                        <p id="foldername">Software Design</p>
 
-                        <div class="swiper-wrapper">
-           
-                           
+                        <p id="foldername">Software Design</p>
+                        <div class="swiper-container">
+                            <button onclick="location.href='addDocument.html'" id="addfolder"> Add Document</button>
+
+                            <div class="swiper-wrapper">
+
+
                                 <div class="swiper-slide">
-                 
-                            
+
+
                                     <div class="slider-box">
-                                   
+
                                         <p class="time">New</p>
-                                        
-                 
+
+
                                         <div class="img-box">
-                                     
-                                         
-                                        
-                                      
+
+
+
+
                                         </div>
-                                        
-                                       
-                                       
-                                       
-                 
+
+
+
+
+
                                     </div>
-                                    
+
                                 </div>
-                              
+
                             </div>
 
 
+                        </div>
                     </div>
-                </div>
             </body>
             <footer>
-        </div>
-    </div>
-
-    <div class="footer">
-        <div class="pckMrk" style="font-family: Calibri; font-size: 40px; ">AcademicDA</div>
-
-
-        <div class="downmenu">
-
-
-            <button id="footbtn">Home</button>
-            <button id="footbtn">Folder</button>
-            <button id="footbtn">Edit Account</button>
-
+                </div>
         </div>
 
+        <div class="footer">
+            <div class="pckMrk" style="font-family: Calibri; font-size: 40px; ">AcademicDA</div>
 
 
-    </div>
+            <div class="downmenu">
 
-    <div id="copy">&copy All Rights Reserved</div>
+
+                <button id="footbtn" onclick="location.href='FolderPage.html'">Home</button>
+                <button id="footbtn" onclick="location.href='DocumentPage.html'">Document</button>
+                <button id="footbtn">Edit Account</button>
+
+
+            </div>
+
+
+
+        </div>
+
+        <div id="copy">&copy All Rights Reserved</div>
     </div>
 
     </footer>

@@ -9,9 +9,14 @@
     height: 25vh;
     display: flex;
     flex-direction: row;
-    background-color: rgba(0, 98, 128, 0.644);
-    background-image:;
+    background-color: white;
+    background-image: url('docInfo.jpg');
     justify-content: stretch;
+}
+
+.shade {
+    background-color: rgba(0, 98, 128, 0.644);
+    width: 100vw;
 }
 
 .middle-mid {
@@ -19,12 +24,12 @@
 }
 
 .slider-box {
-    margin: 30px;
+    margin: 20px;
     margin-left: 0;
-    height: 40vh;
-    width: 15vw;
+    height: 80vh;
+    width: 50vw;
     position: relative;
-    background-color: #044A50;
+    background-color: white;
     border-radius: 5px;
     display: flex;
     flex-direction: column;
@@ -62,7 +67,7 @@
     align-items: center;
     box-sizing: border-box;
     font-size: 20px;
-    line-height: 65px;
+    line-height: 35px;
 }
 
 .price {
@@ -132,7 +137,7 @@
 .pocketMarket {
     font-size: 60px;
     font-family: 'Gill Sans';
-    color:white;
+    color: white;
 }
 
 #btn {
@@ -148,7 +153,7 @@
 }
 
 #btn:hover {
-    background-color:#044A50;
+    background-color: #044A50;
     cursor: pointer;
 }
 
@@ -207,7 +212,7 @@
     justify-content: center;
     margin-left: 80px;
     margin-top: 15px;
-    border-color:#044A50;
+    border-color: #044A50;
 }
 
 #homebtn:hover {
@@ -224,7 +229,7 @@
     display: flex;
     flex-direction: row;
     width: 25vh;
-    background-color:#044A50;
+    background-color: #044A50;
     opacity: 95%;
     height: 100vh;
 }
@@ -244,11 +249,11 @@
 }
 
 .nmenubtn {
-    border-color:#044A50;
+    border-color: #044A50;
     font-size: 25px;
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     color: white;
-    background-color:#044A50;
+    background-color: #044A50;
     margin-top: 10%;
     border-style: none;
     transition: all .2s ease-in-out;
@@ -411,6 +416,7 @@
     height: 30px;
     margin: 0px 0px 0px 35px;
 }
+
 .inputi6 {
     height: 30px;
     margin: 0px 0px 0px 60px;
@@ -490,7 +496,7 @@
     font-family: Calibri;
     font-size: 45px;
     justify-content: justify;
-    background-color:#044A50;
+    background-color: #044A50;
     color: white;
     text-align: justify;
 }
@@ -537,7 +543,7 @@
     color: white;
     justify-content: center;
     font-family: 'Calibri';
-    background-color:#044A50;
+    background-color: #044A50;
     display: flex;
     position: relative;
     bottom: 0;
@@ -574,55 +580,44 @@
     color: white;
 }
 
-@media only screen and  (max-width: 375px){
-    
-    .footbx2{
-          margin-top: 5px;
-          margin-bottom: 5px;
+@media only screen and (max-width: 375px) {
+    .footbx2 {
+        margin-top: 5px;
+        margin-bottom: 5px;
     }
-     
-    .footer{
-       display: flex;
-       flex-direction: column;
-       margin-top: 50%; 
-       
-        
-
-        
-        
+    .footer {
+        display: flex;
+        flex-direction: column;
+        margin-top: 50%;
     }
-    .footbx3{
-         margin-left: 10%;
-
+    .footbx3 {
+        margin-left: 10%;
     }
-  
-    .middle{
-        width:150px;
+    .middle {
+        width: 150px;
     }
-    .nmenubtn{
-        font-size:20px;
+    .nmenubtn {
+        font-size: 20px;
     }
-    .titulli{
+    .titulli {
         font-size: 25px;
     }
-    .titulli1{
-        font-size:20px;
+    .titulli1 {
+        font-size: 20px;
     }
-    .btn1{
-        margin-left:5%;
+    .btn1 {
+        margin-left: 5%;
     }
-    .inputi3{
+    .inputi3 {
         margin: 0px 0px 0px 22px;
     }
-    .inputi5{
+    .inputi5 {
         margin: 0px 0px 0px 22px;
     }
-    .inputi1{
-        
-      margin: 0px 0px 0px 22px;
-        
+    .inputi1 {
+        margin: 0px 0px 0px 22px;
     }
-    .inputi2{
+    .inputi2 {
         margin: 0px 0px 0px 22px;
     }
     .swiper-wrapper {
@@ -631,8 +626,8 @@
         grid-column-gap: 5px;
         grid-row-gap: 5px;
     }
-    .slider-box{
-        width:150px;
+    .slider-box {
+        width: 150px;
         height: 150px;
     }
 }
