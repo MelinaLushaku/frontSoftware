@@ -203,6 +203,13 @@
             color: black;
         }
         
+        #professorid {
+            justify-content: left;
+            font-size: 30px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+            color: black;
+        }
+        
         #addfolder {
             height: 50px;
             width: 100px;
@@ -297,7 +304,7 @@
             transition: background-color 0.6s ease;
         }
         
-        .btn {
+        .submit {
             border-color: #044A50;
             width: 150px;
             height: 55px;
@@ -356,6 +363,7 @@
         
         .block {
             margin-top: 5%;
+            flex-direction: column;
         }
         
         .block1 {
@@ -363,7 +371,7 @@
             margin-bottom: auto;
         }
         
-        .inputi1 {
+        .foldername {
             height: 30px;
             margin: 0px 0px 0px 27px;
         }
@@ -373,19 +381,9 @@
             margin: 0px 0px 0px 30px;
         }
         
-        .inputi3 {
+        #input {
             height: 30px;
             margin: 0px 0px 0px 68px;
-        }
-        
-        .inputi4 {
-            height: 30px;
-            margin: 0px 0px 0px 68px;
-        }
-        
-        .inputi5 {
-            height: 30px;
-            margin: 0px 0px 0px 102px;
         }
         
         .form-header {
