@@ -161,9 +161,12 @@ $("#submitRegister").click(function(e) {
         }
     })
 });
-/*
+
+
+/* KODI PER MI THIR KREJT PROFAT PREJ DATABASES ; KONTROLLERI O I SHKRUM NE JAVA */
+
+
 $( document ).ready(function() {
-  
     // GET REQUEST
     $("#getAllCustomerId").click(function(event){
       event.preventDefault();
@@ -176,18 +179,27 @@ $( document ).ready(function() {
         type : "GET",
         url :  "http://localhost:8080/api/user/getALLProf",
         success: function(result){
-          if(result.status == "Done"){
+            
             $('#getResultDiv ul').empty();
-            var custList = "";
-            $.each(result.data, function(i, Professor){
-              var professor = "- professor with Id = " + i + ", firstname = " + Professor.name + ", email = " + Professor.email+ "<br>";
-              $('#getResultDiv .list-group').append(professor)
+           
+            
+        $.each(result, function(i, item){
+            //document.getElementById("getResultDiv").innerHTML= item.name;
+          //    var professor = "- professor with Id = " + professor.ProfId + ", firstname = " + professor.Name + ", email = " + professor.email+ ", email = " + professor.password
+           // + ", email = " + professor.degree+ ", email = " + professor.Username+ "<br>";
+            $('#getResultDiv').append(item.name+'</br>');
+            //document.getElementById('getResultDiv').innerHTML = result;
+            
+         // $('#getResultDiv .list-group').append("tekst prov");
+         console.log("Success: ", item.name);
                 });
-            console.log("Success: ", result);
-          }else{
-            $("#getResultDiv").html("<strong>Error</strong>");
-            console.log("Fail: ", result);
-          }
+               // alert(item.name+" "+item.email)
+          //alert(item.FirstName+" "+item.LastName)
+          
+          //console.log("Success: ", item.name);
+           // alert(result)
+            
+          
         },
         error : function(e) {
           $("#getResultDiv").html("<strong>Error</strong>");
@@ -195,7 +207,7 @@ $( document ).ready(function() {
         }
       });  
     }
-  })*/
+  })
 
 /* Kodi qe spi shfaq profesorat po veq errorat permi qit koment*/ 
 
