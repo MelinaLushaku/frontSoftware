@@ -11,10 +11,26 @@
 <body>
  <div class="shade">
      <div class="header">
-         
+             
      <h1>AcademicDA</h1>
      <h3>All your documents in one place</h3>
     </div>
+
+    <!----Qitu ja nis pjesa provv-->
+    <div class="col-sm-7" id="postResultDiv">
+    </div>
+    
+    <div class="col-sm-7" style="margin:20px 0px 20px 0px">
+      <button id="getAllCustomerId" type="button" class="btn btn-primary">Get All Customers</button>
+      <div id="getResultDiv" style="padding:20px 10px 20px 50px">
+            <ul class="list-group">
+          </ul>
+        </div>
+    </div>
+    
+  </div>
+     <!----Qitu kryhet-->
+
     <div class="container">
         <div class="link-container">
             <a id="firstA" href="#" onclick="changeForm(0)">Login</a>
@@ -43,6 +59,7 @@
                 <input id="username2" type="text" class="input" placeholder="username..." />
                 <input id="submitRegister" type="submit" class="input submit" value="Register" />
             </div>
+            
         </form>
     </div>
     <div class="footer">

@@ -161,30 +161,66 @@ $("#submitRegister").click(function(e) {
         }
     })
 });
+/*
+$( document ).ready(function() {
+  
+    // GET REQUEST
+    $("#getAllCustomerId").click(function(event){
+      event.preventDefault();
+      ajaxGet();
+    });
+    
+    // DO GET
+    function ajaxGet(){
+      $.ajax({
+        type : "GET",
+        url :  "http://localhost:8080/api/user/getALLProf",
+        success: function(result){
+          if(result.status == "Done"){
+            $('#getResultDiv ul').empty();
+            var custList = "";
+            $.each(result.data, function(i, Professor){
+              var professor = "- professor with Id = " + i + ", firstname = " + Professor.name + ", email = " + Professor.email+ "<br>";
+              $('#getResultDiv .list-group').append(professor)
+                });
+            console.log("Success: ", result);
+          }else{
+            $("#getResultDiv").html("<strong>Error</strong>");
+            console.log("Fail: ", result);
+          }
+        },
+        error : function(e) {
+          $("#getResultDiv").html("<strong>Error</strong>");
+          console.log("ERROR: ", e);
+        }
+      });  
+    }
+  })*/
 
+/* Kodi qe spi shfaq profesorat po veq errorat permi qit koment*/ 
 
-function showUserData() {
-    var emp = JSON.parse(localStorage.getItem('professor'));
+/*function showUserData() {
+    var prof = JSON.parse(localStorage.getItem('professor'));
 
-    var rows = createRows(emp.tasks)
+    var rows = createRows(prof)
     var index = 0;
     while (index < rows.length) {
         $('#tableBody').append(rows[index++]);
     }
 }
 
-/*function createRows(tasks) {
+function createRows(prof) {
     var index = 0;
     var rows = [];
-    while (index < tasks.length) {
+    while (index < prof.length) {
         var row = document.createElement('tr');
 
         var td1 = document.createElement('td');
-        var td1text = document.createTextNode(tasks[index].taskCode);
+        var td1text = document.createTextNode(prof[index].ProfId);
         td1.appendChild(td1text)
 
         var td2 = document.createElement('td');
-        var td2text = document.createTextNode(tasks[index].taskName);
+        var td2text = document.createTextNode(prof[index].name);
         td2.appendChild(td2text)
         row.appendChild(td1);
         row.appendChild(td2);

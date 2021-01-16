@@ -14,10 +14,10 @@
 }
 */
 
-function validate(form) {
+function validate() {
     let inputs = document.querySelectorAll("input");
     let test = document.getElementsByTagName("input");
-
+     
     addfolder = {
         foldername: $("#foldername").val(),
         professorid: $("#professorid").val()
@@ -35,8 +35,9 @@ function validate(form) {
     // } else if (form == 1 && inputs[3].value == "" && inputs[4].value == "" && inputs[5].value == "") {
     //     return false;
     // }
+    return true;
+     }
 
-}
 
 // var input1 = document.getElementById("profid").value;
 
@@ -83,8 +84,8 @@ function validate(form) {
 
 
 var addfolder = {
-    name: "",
-    profid: ""
+    foldername: "",
+    professorid: ""
 }
 
 $("#submit").click(function(e) {
