@@ -19,8 +19,9 @@ function validate() {
     let test = document.getElementsByTagName("input");
      
     addfolder = {
-        foldername: $("#foldername").val(),
-        professorid: $("#professorid").val()
+       
+        name:$("#foldername").val(),
+        professor:$("#professorid").val()
     }
 
     var input = document.getElementById("foldername").value;
@@ -36,7 +37,8 @@ function validate() {
     //     return false;
     // }
     return true;
-     }
+}
+
 
 
 // var input1 = document.getElementById("profid").value;
@@ -84,17 +86,18 @@ function validate() {
 
 
 var addfolder = {
-    foldername: "",
-    professorid: ""
+    
+    name: "",
+    professor: 0
 }
 
-$("#submit").click(function(e) {
-    validate(0)
+$("#submit1").click(function(e) {
+    validate()
     e.preventDefault();
     console.log(addfolder);
 
     $.ajax({
-        url: "http://localhost:8080/api/professor/addFolder",
+        url: "http://localhost:8080/api/professor/addFolder3",
         type: 'post',
         contentType: "application/json; charset=utf-8",
         dataType: "json",
