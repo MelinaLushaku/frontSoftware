@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>pocketMarket-Products</title>
+    <title>AcademicDA-addDocument</title>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="documentADDstyle.css">
@@ -33,7 +33,6 @@
 
         <div class="middle">
 
-
             <div class="nenmeny">
                 <button class="nmenubtn" type="menu" >Home</button>
                 <button class="nmenubtn" type="menu">Folder</button>
@@ -44,60 +43,46 @@
          
             <div class="form-group">
                 <div class="form-header">
-                    <a href="#" onclick="changeForm(3)">Register</a>
+                   
                     <h2 class = "titulli">Add Document</h2>
                 </div>
-               
-                    <div class="block">
+                  <div> 
+                    <form id="formaKryesore" action="" method="post">
+                      <div>
                         <label class="label">Document Name</label>
-                        <input class="inputi1" id="name" type="text" name="Document Name" placeholder="Document Name" />
-                    </div>
-                    <div class="block">
-                        <label class="label" for="DocumentSize">Document Size</label>
-                        <input class="inputi2" id="docs" type="text" name="DocumentSize" placeholder="Document Size" />
-                    </div>
-                    <div class="block">
-                        <label class="label" for="DocumentType">Document Type </label>
-                        <input class="inputi3" id="type"type="type" name="Document Type " placeholder="Document Type " data-validation="custom" />
-                    </div>
+                        <input class="input" id="name" type="text" name="Document Name" placeholder="Document Name" />
+                    <label class="label" for="DocumentSize">Document Size</label>
+                        <input class="input" id="docs" type="number" name="DocumentSize" placeholder="Document Size" />
+                   <label class="label" for="DocumentType">Document Type </label>
+                        <input class="input" id="type2"type="text" name="Document Type " placeholder="Document Type " data-validation="custom" />
+                 <label class="label">Create Date</label>
+                        <input class="input" id="cdate" type="date" name="Create Date" placeholder="Create Date" />
+                    <label class="label">Edit Date</label>
+                        <input class="input" id="edate" type="date" name="Edit Date" placeholder="Edit Date" />
+                  <label class="label">Document Path</label>
+                        <input class="input"id="fileP" class="input" type="file" name="file" onclick=""accept="" placeholder="Document Path" />
+                        <label class="label">Document ProfId</label>
+                        <input class="input" id="profID" type="number" name="Document Name" placeholder="ProfId" />
+                         <label class="label">Document FoldId</label>
+                        <input class="input" id="foldID" type="number" name="Document Name" placeholder="FoldId" />
 
-                    <div class="block">
-                        <label class="label">Create Date</label>
-                        <input class="inputi5" id="cdate" type="text" name="Create Date" placeholder="Create Date" />
-                    </div>
-                    <div class="block">
-                        <label class="label">Edit Date</label>
-                        <input class="inputi6" id="date" type="text" name="Edit Date" placeholder="Edit Date" />
-                    </div>
-                    <div class="block">
-                        <label class="label">Document Path</label>
-                        <input class="inputi"id="file" class="inputi" type="file" name="file" onclick=""accept="" placeholder="Document Path" />
-                    </div>
-                  
+                       <!--- <input class="input submit" id="submit" type="submit" value="Adddocument" />---->
+                       <input id="submit" type="submit" class="input submit" value="Adddocument" />
 
-                    
-                    <div class="blockz">
-                        <input class="btn" id="create" type="submit" name="submitbtn3" onclick="" value="Create" />
-                       
+
+                    </div>
                 </form>
-              </div>
-
-
-
-            
-
- 
-
-
-
-
-      </div>
+                </div>
+          </div>
+          </div>
+          </div>
+     
       <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="addDocument.js"></script>
+    <script src="docAdd.js"></script>
     </body>
 <footer>
     
-    </div>
+   
 
     <div class="footer">
         <div class="pckMrk" style="font-family: Calibri; font-size: 40px; ">AcademicDA</div>
@@ -117,7 +102,7 @@
     </div>
 
     <div id="copy">&copy All Rights Reserved</div>
-    </div>
+  
 
 </footer>
 
