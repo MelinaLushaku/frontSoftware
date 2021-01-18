@@ -117,7 +117,7 @@ $("#submit").click(function(e) {
         data: JSON.stringify(login),
         success: function(res) {
             localStorage.setItem('professor', JSON.stringify(res))
-            goToDashboard();
+            
         },
         error: function(request, status, error) {
             console.log(error);
@@ -127,7 +127,7 @@ $("#submit").click(function(e) {
 });
 
 function goToDashboard() {
-    window.location.href = "prov.html";
+    window.location.href = "FolderPage.html";
 }
 
 var register ={
@@ -169,7 +169,7 @@ $("#submitRegister").click(function(e) {
 $( document ).ready(function() {
     // GET REQUEST
     $("#getAllCustomerId").click(function(event){
-      event.preventDefault();
+        event.preventDefault();
       ajaxGet();
     });
     
@@ -241,3 +241,58 @@ function createRows(prof) {
     }
     return rows;
 }*/
+
+function getProfId(){
+     var folderss ={
+        username: $("#username2").val()
+     }
+}
+var folderss = {
+    username:""
+}
+
+    // GET REQUEST
+    $("#submit").click(function(event){
+      getProfId();
+      event.preventDefault(); 
+      console.log(folderss);   
+    
+      $.ajax({
+        type : "get",
+        url :  "http://localhost:8080/api/professor/getFoldByUser",
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        data: JSON.stringify(folderss),
+        success: function(result){
+            
+            $('#getResultDiv2').empty();
+            goToDashboard();
+            
+           
+            
+        $.each(result, function(i, item){
+            //document.getElementById("getResultDiv").innerHTML= item.name;
+          //    var professor = "- professor with Id = " + professor.ProfId + ", firstname = " + professor.Name + ", email = " + professor.email+ ", email = " + professor.password
+           // + ", email = " + professor.degree+ ", email = " + professor.Username+ "<br>";
+            $('#getResultDiv2').append(item.name+'</br>');
+            //document.getElementById('getResultDiv').innerHTML = result;
+            
+         // $('#getResultDiv .list-group').append("tekst prov");
+         console.log("Success: ", item.name);
+         console.log(result);
+                });
+               // alert(item.name+" "+item.email)
+          //alert(item.FirstName+" "+item.LastName)
+          
+          //console.log("Success: ", item.name);
+           // alert(result)
+            
+          
+        },
+        error : function(e) {
+          $("#getResultDiv2").html("<strong>Error</strong>");
+          console.log("ERROR: ", e);
+        }
+      });  
+    
+});
