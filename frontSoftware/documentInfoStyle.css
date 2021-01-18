@@ -4,14 +4,13 @@
 }
 
 .upper {
-    margin: 0;
     width: 100vw;
     height: 25vh;
     display: flex;
     flex-direction: row;
-    background-color: white;
     background-image: url('docInfo.jpg');
     justify-content: stretch;
+    background-color: rgba(0, 98, 128, 0.644);
 }
 
 .shade {
@@ -120,12 +119,13 @@
 }
 
 #box1 {
-    margin-left: 5%;
-    margin-top: 3%;
     flex-direction: column;
     justify-content: center;
-    text-align: right;
+    text-align: left;
     display: flex;
+    color: #fff;
+    font-size: 50px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
 }
 
 .rks {
@@ -172,8 +172,6 @@
     flex-direction: column;
     justify-content: center;
     text-align: center;
-    margin-left: 20%;
-    margin-top: 5%;
 }
 
 .over {
@@ -183,8 +181,15 @@
     color: white;
 }
 
+#search {
+    border-color: #044A50;
+    width: 250px;
+    height: 30px;
+    margin-right: 20%;
+}
+
 .choose {
-    margin: 0;
+    margin-left: 55%;
     font-size: 28px;
     font-family: 'Segoe Print';
     color: white;

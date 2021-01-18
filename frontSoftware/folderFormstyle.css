@@ -22,6 +22,12 @@
             flex-direction: column;
         }
         
+        #label1 {
+            font-size: 32px;
+            font-family: 'Segoe UI';
+            color: #044A50;
+        }
+        
         .slider-box {
             margin: 30px;
             margin-left: 0;
@@ -82,12 +88,13 @@
         }
         
         #box1 {
-            margin-left: 5%;
-            margin-top: 3%;
             flex-direction: column;
             justify-content: center;
-            text-align: right;
+            text-align: left;
             display: flex;
+            color: #fff;
+            font-size: 50px;
+            font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
         }
         
         .rks {
@@ -135,8 +142,6 @@
             flex-direction: column;
             justify-content: center;
             text-align: center;
-            margin-left: 20%;
-            margin-top: 14%;
         }
         
         .over {
@@ -146,8 +151,15 @@
             color: white;
         }
         
+        #search {
+            border-color: #044A50;
+            width: 250px;
+            height: 30px;
+            margin-right: 20%;
+        }
+        
         .choose {
-            margin: 0;
+            margin-left: 55%;
             font-size: 28px;
             font-family: 'Segoe Print';
             color: white;

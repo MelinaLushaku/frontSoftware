@@ -23,10 +23,10 @@
 }
 
 .slider-box {
-    margin: 20px;
+    margin: 30px;
     margin-left: 0;
-    height: 80vh;
-    width: 50vw;
+    height: 40vh;
+    width: 15vw;
     position: relative;
     background-color: white;
     border-radius: 5px;
@@ -69,43 +69,6 @@
     line-height: 35px;
 }
 
-.price {
-    color: #ffffff;
-    background-color: #044A50;
-    line-height: 100px;
-}
-
-.Cart {
-    position: absolute;
-    bottom: 0px;
-    height: 25px;
-    background-color: #044A50;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
-.Cart a {
-    color: #ffffff;
-}
-
-.slider-box:hover {
-    box-shadow: 2px 2px 12px rgba(47, 47, 47, 0.40);
-}
-
-.slider-box:hover .img-box img {
-    transform: scale(1.07);
-    transition: all ease 0.3s;
-}
-
-.Cart:hover {
-    transform: scale(1.1);
-    background-color: #044A50;
-    box-shadow: 2px 2px 12px rgba(47, 47, 47, 0.40);
-    transition: all ease 0.1s;
-}
-
 .swiper-container {
     width: 25%;
     box-sizing: border-box;
@@ -141,7 +104,7 @@
 }
 
 #btn {
-    background-color: #044A50;
+    background-color: white;
     -moz-border-radius: 50px 0 0 50px;
     border-radius: 0 50px 50px 0;
     width: 10%;
@@ -153,7 +116,7 @@
 }
 
 #btn:hover {
-    background-color: #044A50;
+    background-color: red;
     cursor: pointer;
 }
 
@@ -217,7 +180,7 @@
     justify-content: center;
     margin-left: 80px;
     margin-top: 15px;
-    border-color: #044A50;
+    border-color: white;
 }
 
 #homebtn:hover {
@@ -239,6 +202,33 @@
     height: 100vh;
 }
 
+#foldername {
+    justify-content: left;
+    font-size: 30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: black;
+}
+
+#professorid {
+    justify-content: left;
+    font-size: 30px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: black;
+}
+
+#addfolder {
+    height: 50px;
+    width: 100px;
+    background-color: #044A50;
+    color: wheat;
+    margin-left: 500px;
+}
+
+#addfolder:hover {
+    background-color: wheat;
+    color: #044A50;
+}
+
 .slides {
     display: flex;
     justify-content: center;
@@ -251,6 +241,7 @@
     display: flex;
     margin-left: 20%;
     width: 60vw;
+    background-color: #044A50;
 }
 
 .nmenubtn {
@@ -331,7 +322,7 @@
     transition: background-color 0.6s ease;
 }
 
-.btn {
+.submit {
     border-color: #044A50;
     width: 150px;
     height: 55px;
@@ -377,7 +368,7 @@
     /* or absolute */
     top: 30%;
     left: 40%;
-    margin-bottom: 10%;
+    margin-top: 5%;
 }
 
 .label {
@@ -390,6 +381,7 @@
 
 .block {
     margin-top: 5%;
+    flex-direction: column;
 }
 
 .block1 {
@@ -397,34 +389,19 @@
     margin-bottom: auto;
 }
 
-.inputi1 {
+.foldername {
     height: 30px;
-    margin: 0px 0px 0px 0px;
+    margin: 0px 0px 0px 27px;
 }
 
 .inputi2 {
     height: 30px;
-    margin: 0px 0px 0px 15px;
+    margin: 0px 0px 0px 30px;
 }
 
-.inputi3 {
+#input {
     height: 30px;
-    margin: 0px 0px 0px 10px;
-}
-
-.inputi4 {
-    height: 30px;
-    margin: 0px 0px 0px 20px;
-}
-
-.inputi5 {
-    height: 30px;
-    margin: 0px 0px 0px 35px;
-}
-
-.inputi6 {
-    height: 30px;
-    margin: 0px 0px 0px 60px;
+    margin: 0px 0px 0px 68px;
 }
 
 .form-header {
@@ -513,6 +490,7 @@
     color: white;
     font-family: 'Calibri';
     margin-left: 30%;
+    background-color: #044A50;
 }
 
 #footbtn {
@@ -535,6 +513,7 @@
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     cursor: pointer;
     background-color: #044A50;
+    ;
     border: none;
     margin-left: 6%;
     box-shadow: none;
@@ -614,16 +593,16 @@
         margin-left: 5%;
     }
     .inputi3 {
-        margin: 0px 0px 0px 22px;
+        margin: 0px 0px 0px 55px;
     }
     .inputi5 {
-        margin: 0px 0px 0px 22px;
+        margin: 0px 0px 0px 55px;
     }
     .inputi1 {
-        margin: 0px 0px 0px 22px;
+        margin: 0px 0px 0px 55px;
     }
     .inputi2 {
-        margin: 0px 0px 0px 22px;
+        margin: 0px 0px 0px 55px;
     }
     .swiper-wrapper {
         display: grid;
