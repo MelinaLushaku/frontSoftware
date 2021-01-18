@@ -1,9 +1,9 @@
-function validate(){
-    let inputs = document.querySelcetorAll ("input");
+function validate() {
+    let inputs = document.querySelectorAll("input");
     let test = document.getElementsByTagName("input");
-  
 
-    addDocument= {
+
+    addDocument = {
         creationD: $('#cdate').val(),
         docPath: $('#fileP').val(),
         editedD: $('#edate').val(),
@@ -11,23 +11,23 @@ function validate(){
         name: $("#name").val(),
         type: $('#type2').val(),
         profId: $('#profID').val(),
-        foldId: $('#foldID').val(),
+        foldId: $('#foldID').val()
 
     }
- 
-    var inputi1 =document.getElementById("cdate").value;
-    var inputi2 =document.getElementById("fileP").value;
-    var inputi3 =document.getElementById("edate").value;
-    var inputi4 =document.getElementById("docs").value;
-    var inputi5 =document.getElementById("name").value;
-    var inputi6 =document.getElementById("type2").value;
-    var inputi7 =document.getElementById("profID").value;
-    var inputi8 =document.getElementById("foldID").value;
-    if(inputi2.trim()=="" && inputi5.trim()=="" && inputi6.trim()=="" ){
+
+    var inputi1 = document.getElementById("cdate").value;
+    var inputi2 = document.getElementById("fileP").value;
+    var inputi3 = document.getElementById("edate").value;
+    var inputi4 = document.getElementById("docs").value;
+    var inputi5 = document.getElementById("name").value;
+    var inputi6 = document.getElementById("type2").value;
+    var inputi7 = document.getElementById("profID").value;
+    var inputi8 = document.getElementById("foldID").value;
+    if (inputi2.trim() == "" && inputi5.trim() == "" && inputi6.trim() == "") {
         alert('please fill data')
         return;
     }
-  return true;
+    return true;
 }
 
 function goToDashboard() {
@@ -50,7 +50,7 @@ var addDocument = {
 
 
 $("#submit").click(function(e) {
-    validate()
+    validate(0)
     e.preventDefault();
     console.log(addDocument);
 
