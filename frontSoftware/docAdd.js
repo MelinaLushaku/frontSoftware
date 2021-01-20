@@ -5,13 +5,12 @@ function validate() {
 
     addDocument = {
         creationD: $('#cdate').val(),
-        docPath: $('#fileP').val(),
+        path: $('#fileP').val(),
         editedD: $('#edate').val(),
         fileSize: $('#docs').val(),
         name: $("#name").val(),
         type: $('#type2').val(),
-        profId: $('#profID').val(),
-        foldId: $('#foldID').val()
+        folder: $('#foldID').val()
 
     }
 
@@ -21,7 +20,7 @@ function validate() {
     var inputi4 = document.getElementById("docs").value;
     var inputi5 = document.getElementById("name").value;
     var inputi6 = document.getElementById("type2").value;
-    var inputi7 = document.getElementById("profID").value;
+    
     var inputi8 = document.getElementById("foldID").value;
     if (inputi2.trim() == "" && inputi5.trim() == "" && inputi6.trim() == "") {
         alert('please fill data')
@@ -37,13 +36,12 @@ function goToDashboard() {
 
 var addDocument = {
     creationD: null,
-    docPath: "",
+    path: "",
     editedD: null,
     fileSize: null,
     name: "",
     type: "",
-    profId: null,
-    foldId: null
+    folder: null
 
 
 }

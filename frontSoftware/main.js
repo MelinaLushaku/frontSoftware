@@ -21,6 +21,10 @@ function validate(form) {
         username: $("#username").val(),
         password: $("#password").val()
     }
+
+    folderss = {
+        username: $("#username").val()
+    }
     var input = document.getElementById("username").value;
     var input1 = document.getElementById("password").value;   
     if (input.trim() == "" && input1.trim() == "") {
@@ -117,6 +121,7 @@ $("#submit").click(function(e) {
         data: JSON.stringify(login),
         success: function(res) {
             localStorage.setItem('professor', JSON.stringify(res))
+            goToDashboard();
             
         },
         error: function(request, status, error) {
@@ -242,18 +247,14 @@ function createRows(prof) {
     return rows;
 }*/
 
-function getProfId(){
-     var folderss ={
-        username: $("#username2").val()
-     }
-}
-var folderss = {
+
+/*var folderss = {
     username:""
 }
 
     // GET REQUEST
     $("#submit").click(function(event){
-      getProfId();
+      validate(0)
       event.preventDefault(); 
       console.log(folderss);   
     
@@ -295,4 +296,4 @@ var folderss = {
         }
       });  
     
-});
+});*/
