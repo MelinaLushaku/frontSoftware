@@ -22,9 +22,8 @@ function validate(form) {
         password: $("#password").val()
     }
 
-    folderss = {
-        username: $("#username").val()
-    }
+  
+    
     var input = document.getElementById("username").value;
     var input1 = document.getElementById("password").value;   
     if (input.trim() == "" && input1.trim() == "") {
@@ -112,6 +111,7 @@ $("#submit").click(function(e) {
     validate(0)
     e.preventDefault();
     console.log(login);
+    
 
     $.ajax({
         url: "http://localhost:8080/api/user/login",
@@ -119,9 +119,15 @@ $("#submit").click(function(e) {
         contentType: "application/json; charset=utf-8",
         dataType: "json",
         data: JSON.stringify(login),
+        
         success: function(res) {
             localStorage.setItem('professor', JSON.stringify(res))
-            goToDashboard();
+            
+          var username =document.getElementById("username").value;
+          
+          showFolder(username);
+          goToDashboard();
+            
             
         },
         error: function(request, status, error) {
@@ -131,8 +137,61 @@ $("#submit").click(function(e) {
     })
 });
 
+
+function showFolder(username){
+    
+    console.log("veq per prov");
+  
+    $(document).ready(function() {
+    
+    $.ajax({
+        type : "get",
+        url :  "http://localhost:8080/api/professor/getFoldByUser/"+username,
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+       //data: JSON.stringify(login),
+        success: function(result){
+            
+            $('#getResultDiv2').empty();
+            
+           
+        $.each(result, function(i, item){
+            
+            
+           
+            $('#getResultDiv2').append(item.name+'</br>');
+           
+         console.log("Success: ", item.name);
+         
+
+                });
+               
+               // alert(item.name+" "+item.email)
+          //alert(item.FirstName+" "+item.LastName)
+          
+          //console.log("Success: ", item.name);
+           // alert(result)
+            
+           
+        } ,
+        error : function(e) {
+          $("#getResultDiv2").html("<strong>Error</strong>");
+          console.log("ERROR: ", e);
+        }
+      });  
+    
+    
+      
+})
+   }
+
+
+
+
 function goToDashboard() {
-    window.location.href = "FolderPage.html";
+   
+    
+    window.location.replace("FolderPage.html");
 }
 
 var register ={
@@ -213,8 +272,7 @@ $( document ).ready(function() {
       });  
     }
   })
-
-/* Kodi qe spi shfaq profesorat po veq errorat permi qit koment*/ 
+ 
 
 /*function showUserData() {
     var prof = JSON.parse(localStorage.getItem('professor'));
