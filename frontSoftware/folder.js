@@ -202,8 +202,8 @@ $("#getFolders").click(function(e){
         success: function(result){
          $('#getResultDiv2').empty();
              $.each(result, function(i, item){
-              //  $('#getResultDiv2').append('<p>'+item.folderid+'</p>');
-           $('#getResultDiv2').append('<button id="folderattt>'+item.name+'</button>'+'</br>');
+          
+           $('#getResultDiv2').append('<button id="folderattt">'+item.name+'</button>'+'</br>');
            
          console.log("Success: ", item.name);
          
