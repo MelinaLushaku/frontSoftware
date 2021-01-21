@@ -188,3 +188,33 @@ $("#deleteFol").click(function(e) {
 });
 
 
+
+$("#getFolders").click(function(e){
+   console.log(1);
+   var username =document.getElementById("userNamii").value;
+    
+    $.ajax({
+        type : "get",
+        url :  "http://localhost:8080/api/professor/getFoldByUser/"+username,
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+       //data: JSON.stringify(login),
+        success: function(result){
+         $('#getResultDiv2').empty();
+             $.each(result, function(i, item){
+              //  $('#getResultDiv2').append('<p>'+item.folderid+'</p>');
+           $('#getResultDiv2').append('<button id="folderattt>'+item.name+'</button>'+'</br>');
+           
+         console.log("Success: ", item.name);
+         
+
+                });
+    
+        } ,
+        error : function(e) {
+          $("#getResultDiv2").html("<strong>You haven't specify your username</strong>");
+          console.log("ERROR: ", e);
+        }
+       
+})
+});

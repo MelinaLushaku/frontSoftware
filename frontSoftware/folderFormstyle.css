@@ -2,6 +2,19 @@
             margin: 0;
             padding: 0;
         }
+
+        #folderattt{
+            width: 100px;
+            height: 100px;
+
+        }
+        #getResultDiv2{
+            width: 800px;
+            
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+        }
         
         .upper {
             width: 100vw;

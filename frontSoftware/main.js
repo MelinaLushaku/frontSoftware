@@ -122,11 +122,7 @@ $("#submit").click(function(e) {
         
         success: function(res) {
             localStorage.setItem('professor', JSON.stringify(res))
-            
-          var username =document.getElementById("username").value;
-          
-          showFolder(username);
-          //goToDashboard();
+             goToDashboard();
             
             
         },
@@ -138,7 +134,7 @@ $("#submit").click(function(e) {
 });
 
 
-function showFolder(username){
+/*function showFolder(username){
     goToDashboard();
     console.log("veq per prov");
      
@@ -183,7 +179,7 @@ function showFolder(username){
     
       
 })
-   }
+   }*/
 
 
 
