@@ -42,14 +42,19 @@
                 <button class="nmenubtn" type="menu">Edit Account</button>
 
             </div>
-
-
+            
+               
             <div class="form-group">
                 <div class="form-header">
                     <h2 class="titulli1">Folders</h2>
                 </div>
                 <div class="swiper-container">
                     <button onclick="location.href='addfolderPage.html'" id="addfolder">Add Folder</button>
+                    <label style="margin-left: 500px;"  for="">DeleteDocumentByID:</label>
+                    <input id="deleteF" type="number" placeholder="Specify Id of the Folder..."/>
+
+                    <input id="deleteFol" type="submit" value="DeleteFold"/>
+                   <form method="GET">
                     <p id="foldername">Software Design</p>
 
 
@@ -57,13 +62,14 @@
 
                     </div>
 
-
+                </form>
 
 
                 </div>
             </div>
             <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
             <script src="main.js"></script>
+            <script src="folder.js"></script>
 
 </body>
 <footer>

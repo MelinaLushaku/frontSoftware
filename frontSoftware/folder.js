@@ -27,7 +27,7 @@ function validate() {
     var input = document.getElementById("foldername").value;
     var input1 = document.getElementById("professorid").value;
     if (input.trim() == "" && input1.trim() == "") {
-        alert('please fill data')
+       // alert('please fill data')
         return;
     }
 
@@ -95,7 +95,7 @@ $("#submit1").click(function(e) {
     validate()
     e.preventDefault();
     console.log(addfolder);
-
+   // goToDashboard2();
     $.ajax({
         url: "http://localhost:8080/api/professor/addFolder3",
         type: 'post',
@@ -103,49 +103,88 @@ $("#submit1").click(function(e) {
         dataType: "json",
         data: JSON.stringify(addfolder),
         success: function(res) {
+           // goToDashboard();
+           
             localStorage.setItem('folder', JSON.stringify(res))
-            goToDashboard();
+            
+            
+            //goToDashboard2();
+           
         },
         error: function(request, status, error) {
             console.log(error);
             console.log(status);
         }
     })
+    if(validate()){
+    
+    alert("Folder has been saved");
+    goToDashboard2();
+    }else{
+    alert ("Please fill the inputs");
+    window.location.href = "addFolderPage.html";
+    }
+  
 });
 
-function goToDashboard() {
-    window.location.href = "prov.html";
+function goToDashboard2() {
+    window.location.href = "FolderPage.html";
 }
 
 
+function validate3(){
 
-function showUserData() {
-    var emp = JSON.parse(localStorage.getItem('folder'));
-
-    var rows = createRows(emp.tasks)
-    var index = 0;
-    while (index < rows.length) {
-        $('#tableBody').append(rows[index++]);
+    deleteFolder = {
+       
+        modelId:$("#deleteF").val()
+        
     }
+
+    var input = document.getElementById("deleteF").value;
+
+    if (input.trim() == "") {
+       // alert('please fill folder Id')
+        return;
+    }
+
+    // if (form == 0 && login[username] == "" && login[password] == "") {
+    //     return false;
+    // } else if (form == 1 && inputs[3].value == "" && inputs[4].value == "" && inputs[5].value == "") {
+    //     return false;
+    // }
+    return true;
 }
+deleteFolder = {
+    modelId: null
+}
+$("#deleteFol").click(function(e) {
+    validate3()
+    e.preventDefault();
+    console.log(deleteFolder);
 
-/*function createRows(tasks) {
-    var index = 0;
-    var rows = [];
-    while (index < tasks.length) {
-        var row = document.createElement('tr');
-
-        var td1 = document.createElement('td');
-        var td1text = document.createTextNode(tasks[index].taskCode);
-        td1.appendChild(td1text)
-
-        var td2 = document.createElement('td');
-        var td2text = document.createTextNode(tasks[index].taskName);
-        td2.appendChild(td2text)
-        row.appendChild(td1);
-        row.appendChild(td2);
-        rows.push(row);
-        index++;
+    $.ajax({
+        url: "http://localhost:8080/api/professor/deleteFold",
+        type: 'post',
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        data: JSON.stringify(deleteFolder),
+        success: function(res) {
+            localStorage.setItem('folder', JSON.stringify(res))
+            
+        },
+        error: function(request, status, error) {
+            console.log(error);
+            console.log(status);
+        }
+    })
+    if(validate3()){
+        alert("Folder has been deleted");
+    goToDashboard2();
+    }else{
+        alert('please fill folder Id');
+        alert("No folder has been deleted");
+        goToDashboard2();
     }
-    return rows;
-}*/
+});
+
+

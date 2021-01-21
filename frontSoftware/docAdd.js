@@ -30,7 +30,7 @@ function validate() {
 }
 
 function goToDashboard() {
-    window.location.href = "prov.html";
+    window.location.href = "FolderPage.html";
 }
 
 
@@ -48,7 +48,7 @@ var addDocument = {
 
 
 $("#submit").click(function(e) {
-    validate(0)
+   // validate(0)
     e.preventDefault();
     console.log(addDocument);
 
@@ -60,13 +60,20 @@ $("#submit").click(function(e) {
         data: JSON.stringify(addDocument),
         success: function(res) {
             localStorage.setItem('document', JSON.stringify(res))
-            goToDashboard();
+            
         },
         error: function(request, status, error) {
             console.log(error);
             console.log(status);
         }
     })
+    if(validate(0)){
+        alert("Document has been added");
+        goToDashboard();
+    }
+    else{
+        window.href.location = "DocumentADD.html"
+    }
 });
 
 

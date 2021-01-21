@@ -126,7 +126,7 @@ $("#submit").click(function(e) {
           var username =document.getElementById("username").value;
           
           showFolder(username);
-          goToDashboard();
+          //goToDashboard();
             
             
         },
@@ -139,9 +139,9 @@ $("#submit").click(function(e) {
 
 
 function showFolder(username){
-    
+    goToDashboard();
     console.log("veq per prov");
-  
+     
     $(document).ready(function() {
     
     $.ajax({
@@ -156,7 +156,7 @@ function showFolder(username){
             
            
         $.each(result, function(i, item){
-            
+            $("#getResultDiv2").load("FolderPAge.html")
             
            
             $('#getResultDiv2').append(item.name+'</br>');
@@ -208,6 +208,7 @@ $("#submitRegister").click(function(e) {
     validate(1)
     e.preventDefault();
     console.log(register);
+    
 
     $.ajax({
         url: "http://localhost:8080/api/user/registre",
@@ -217,13 +218,16 @@ $("#submitRegister").click(function(e) {
         data: JSON.stringify(register),
         success: function(res) {
             localStorage.setItem('professor', JSON.stringify(res))
-            goToDashboard();
+           // goToDashboard();
         },
         error: function(request, status, error) {
             console.log(error);
             console.log(status);
         }
     })
+
+    alert("Welcome to AcademicDA");
+    goToDashboard();
 });
 
 

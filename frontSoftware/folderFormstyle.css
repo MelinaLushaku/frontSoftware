@@ -234,6 +234,32 @@
             background-color: wheat;
             color: #044A50;
         }
+
+
+        #deleteF {
+          
+            color: #044A50;
+            margin-left: 500px;
+        }
+        
+        #deleteF:hover {
+            background-color: wheat;
+            
+        }
+        #deleteFol {
+            height: 50px;
+            width: 100px;
+            background-color: #044A50;
+            color: wheat;
+            margin-left: 500px;
+        }
+        
+        #deleteFol:hover {
+            background-color: wheat;
+            color: #044A50;
+        }
+    
+        
         
         .slides {
             display: flex;
