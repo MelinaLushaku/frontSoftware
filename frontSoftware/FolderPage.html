@@ -10,7 +10,7 @@
 
 </head>
 
-<body > 
+<body>
 
     <div class="upper">
         <div class="shade">
@@ -41,33 +41,38 @@
                 <button class="nmenubtn" onclick="location.href='DocumentPage.html'" type="menu">Document</button>
                 <button class="nmenubtn" type="menu">Edit Account</button>
 
+                <input id="userNamee" type="text" placeholder="Username" />
+                <div class="numberbtns">
+                    <button class="number" id="foldernumber">Total folders </button>
+                    <button class="number" id="docnumber">Total documents </button>
+                </div>
             </div>
-            
-               
+
+
             <div class="form-group">
                 <div class="form-header">
                     <h2 class="titulli1">Folders</h2>
                 </div>
                 <div class="swiper-container">
                     <button onclick="location.href='addfolderPage.html'" id="addfolder">Add Folder</button>
-                    <label style="margin-left: 500px;"  for="">DeleteDocumentByID:</label>
-                    <input id="deleteF" type="number" placeholder="Specify Id of the Folder..."/>
+                    <label style="margin-left: 500px;" for="">DeleteDocumentByID:</label>
+                    <input id="deleteF" type="number" placeholder="Specify Id of the Folder..." />
 
-                    <input id="deleteFol" type="submit" value="DeleteFold"/>
-                 <div>
-                     <input id="userNamii" type = "text" placeholder="please specify your username"/>  
-                     <button id="getFolders" type="button">Get Folders</button>
-                     </div>
-                     <div>
-                   
-
-
-                    <div id="getResultDiv2" >
-
+                    <input id="deleteFol" type="submit" value="DeleteFold" />
+                    <div>
+                        <input id="userNamii" type="text" placeholder="please specify your username" />
+                        <button id="getFolders" type="button">Get Folders</button>
                     </div>
-                </div>
+                    <div>
 
-                
+
+
+                        <div id="getResultDiv2">
+
+                        </div>
+                    </div>
+
+
 
 
                 </div>

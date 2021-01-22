@@ -13,6 +13,23 @@
     background-color: rgba(0, 98, 128, 0.644);
 }
 
+.number {
+    flex-direction: row;
+    height: 40px;
+    width: 80px;
+    border-color: wheat;
+    background-color: #044A50;
+    color: wheat;
+}
+
+.numberbtns {
+    flex-direction: row;
+}
+
+.number:hover {
+    transform: scale(1.1);
+}
+
 .shade {
     background-color: rgba(0, 98, 128, 0.7);
     width: 100vw;

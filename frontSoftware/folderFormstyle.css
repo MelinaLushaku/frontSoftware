@@ -2,15 +2,14 @@
             margin: 0;
             padding: 0;
         }
-
-        #folderattt{
+        
+        #folderattt {
             width: 100px;
             height: 100px;
-
         }
-        #getResultDiv2{
+        
+        #getResultDiv2 {
             width: 800px;
-            
             display: flex;
             flex-direction: row;
             justify-content: space-around;
@@ -247,18 +246,45 @@
             background-color: wheat;
             color: #044A50;
         }
-
-
+        
+        #getFolders {
+            height: 50px;
+            width: 100px;
+            background-color: #044A50;
+            color: wheat;
+        }
+        
+        #getFolders:hover {
+            background-color: wheat;
+            color: #044A50;
+        }
+        
         #deleteF {
-          
             color: #044A50;
             margin-left: 500px;
         }
         
+        .number {
+            flex-direction: row;
+            height: 40px;
+            width: 80px;
+            border-color: wheat;
+            background-color: #044A50;
+            color: wheat;
+        }
+        
+        .numberbtns {
+            flex-direction: row;
+        }
+        
+        .number:hover {
+            transform: scale(1.1);
+        }
+        
         #deleteF:hover {
             background-color: wheat;
-            
         }
+        
         #deleteFol {
             height: 50px;
             width: 100px;
@@ -271,8 +297,6 @@
             background-color: wheat;
             color: #044A50;
         }
-    
-        
         
         .slides {
             display: flex;
