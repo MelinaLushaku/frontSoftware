@@ -218,3 +218,71 @@ $("#getFolders").click(function(e){
        
 })
 });
+
+
+
+
+$("#foldernumber").click(function(e){
+   // validate5();
+    console.log(1);
+   var useri = document.getElementById("userNamee").value;
+     $.ajax({
+         type : "get",
+         url :  "http://localhost:8080/api/professor/numberOfFolders/"+useri,
+         contentType: "application/json; charset=utf-8",
+         dataType: "json",
+      //  data: JSON.stringify(total),
+         success: function(result){
+               
+            alert("Profesori me username "+useri+" ka gjithsej "+result+" folder");
+
+         // $('#getResultDiv2').empty();
+           //   $.each(result, function(i, item){
+           // $('#getResultDiv2').append('<button id="folderattt">'+item.name+'</button>'+'</br>');
+            
+          //console.log("Success: ", item.name);
+          
+ 
+                
+         } ,
+         error : function(e) {
+          alert("You havet specify your username!");
+           console.log("ERROR: ", e);
+         }
+        
+ })
+});
+
+
+
+$("#docnumber").click(function(e){
+    // validate5();
+     console.log(1);
+    var useri = document.getElementById("userNamee").value;
+      $.ajax({
+          type : "get",
+          url :  "http://localhost:8080/api/professor/numberOfDoc/"+useri,
+          contentType: "application/json; charset=utf-8",
+          dataType: "json",
+       //  data: JSON.stringify(total),
+          success: function(result){
+                
+             alert("Profesori me username "+useri+" ka gjithsej "+result+" dokumente");
+ 
+          // $('#getResultDiv2').empty();
+            //   $.each(result, function(i, item){
+            // $('#getResultDiv2').append('<button id="folderattt">'+item.name+'</button>'+'</br>');
+             
+           //console.log("Success: ", item.name);
+           
+  
+                 
+          } ,
+          error : function(e) {
+           alert("You havet specify your username!");
+            console.log("ERROR: ", e);
+          }
+         
+  })
+ });
+
