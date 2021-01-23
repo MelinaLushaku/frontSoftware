@@ -200,12 +200,18 @@ $("#getFolders").click(function(e){
         dataType: "json",
        //data: JSON.stringify(login),
         success: function(result){
-         $('#getResultDiv2').empty();
-             $.each(result, function(i, item){
+        $('#getResultDiv2').empty();
+        $('#getDocuments2').empty();
+         $.each(result, function(i, item){
           
-           $('#getResultDiv2').append('<button id="folderattt">'+item.name+'</button>'+'</br>');
+           $('#getResultDiv2').append('<button type="button" class="folderattt">'+item.name+'</button>'+'</br>');
            
          console.log("Success: ", item.name);
+         document.getElementsByClassName("folderattt").val = item.folderID;
+        
+         var x =document.getElementsByClassName("folderattt").val;
+        // document.getElementById("folderattt").setAttribute("id","folderattt"+x);
+         console.log(x);
          
 
                 });
@@ -218,6 +224,59 @@ $("#getFolders").click(function(e){
        
 })
 });
+
+//merri dokumentat
+
+/*function validateDok(){
+    
+    dokumentat = {
+        modelId:$("#folderattt").val()
+    }
+}
+dokumentat = {
+    modelId:""
+}*/
+
+
+$(document).on('click', '.folderattt', function() {
+    var x = $(this).text();
+
+
+    console.log("u prek butoni");
+   // var x =document.getElementsByClassName("folderattt").text;
+    console.log(x);
+    
+  
+     $.ajax({
+         type : "get",
+         url :  "http://localhost:8080/api/professor/getDocByFolder/"+x,
+         contentType: "application/json; charset=utf-8",
+         dataType: "json",
+        // data: JSON.stringify(dokumentat),
+         success: function(result){
+          $('#getDocuments2').empty();
+          $('#getDocuments2').append('<p>Dokuementet jane:</p>'+'</br>');
+          
+          console.log(result);
+            $.each(result, function(i, item){
+            
+            $('#getDocuments2').append('<p>'+item.name+'</p>'+'</br>');
+            
+          console.log("Success: ", item.name);
+         // var x =$("#folderattt"). value = item.folderID;
+          //console.log(x);
+          
+ 
+                 });
+     
+         } ,
+         error : function(e) {
+           $("#getDocuments2").html("<strong>You cant have two documets with the same name!</strong>");
+           console.log("ERROR: ", e);
+         }
+        
+ })
+ });
 
 
 

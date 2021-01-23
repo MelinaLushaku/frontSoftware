@@ -243,19 +243,21 @@ $( document ).ready(function() {
         type : "GET",
         url :  "http://localhost:8080/api/user/getALLProf",
         success: function(result){
-            
-            $('#getResultDiv ul').empty();
+           
+            $('#getResultDiv').empty();
            
             
         $.each(result, function(i, item){
-            //document.getElementById("getResultDiv").innerHTML= item.name;
-          //    var professor = "- professor with Id = " + professor.ProfId + ", firstname = " + professor.Name + ", email = " + professor.email+ ", email = " + professor.password
-           // + ", email = " + professor.degree+ ", email = " + professor.Username+ "<br>";
-            $('#getResultDiv').append(item.name+'</br>');
+           
+            $('#getResultDiv').append('<p>'+item[0].name+'</p></br>');
+
+            
+           
+           
             //document.getElementById('getResultDiv').innerHTML = result;
             
          // $('#getResultDiv .list-group').append("tekst prov");
-         console.log("Success: ", item.name);
+         console.log("Success: ", item);
                 });
                // alert(item.name+" "+item.email)
           //alert(item.FirstName+" "+item.LastName)
@@ -266,6 +268,7 @@ $( document ).ready(function() {
           
         },
         error : function(e) {
+            
           $("#getResultDiv").html("<strong>Error</strong>");
           console.log("ERROR: ", e);
         }
