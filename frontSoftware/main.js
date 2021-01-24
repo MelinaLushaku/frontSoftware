@@ -26,9 +26,9 @@ function validate(form) {
     
     var input = document.getElementById("username").value;
     var input1 = document.getElementById("password").value;   
-    if (input.trim() == "" && input1.trim() == "") {
+    if (input.trim() == ""  && input1.trim =="") {
         alert('please fill data')
-        return;
+        return false;
     }
 
     // if (form == 0 && login[username] == "" && login[password] == "") {
@@ -58,7 +58,7 @@ else if (form == 1){
     if ( input2.trim() == "" && input3.trim() == ""
     && input4.trim() == "" && input5.trim() == "" && input6.trim() == "") {
         alert('please fill data')
-        return;
+        return false;
     }
 
     // if (form == 0 && login[username] == "" && login[password] == "") {
@@ -121,11 +121,21 @@ $("#submit").click(function(e) {
         data: JSON.stringify(login),
         
         success: function(res) {
-            localStorage.setItem('professor', JSON.stringify(res))
+            var prov =res.errori;
+            if(prov == null){
+            localStorage.setItem('professor', JSON.stringify(res.data))
              goToDashboard();
-            
-            
-        },
+            }
+             else{
+                    if(validate(0) == false){
+                       window.location.href = "Alogin.html#";
+                    }else{
+                    alert(res.errori);
+                    window.location.href = "Alogin.html#";
+                    }
+                } 
+                 
+            } ,
         error: function(request, status, error) {
             console.log(error);
             console.log(status);
@@ -213,17 +223,28 @@ $("#submitRegister").click(function(e) {
         dataType: "json",
         data: JSON.stringify(register),
         success: function(res) {
-            localStorage.setItem('professor', JSON.stringify(res))
-           // goToDashboard();
+            var e = res.errori;
+            if(e == null){
+            localStorage.setItem('professor', JSON.stringify(res.data))
+            alert("Welcome to AcademicDA");
+            goToDashboard();
+            }
+            else{
+                if(validate(1) == false){
+                   window.location.href = "Alogin.html#";
+                }else{
+                alert(res.errori);
+                window.location.href = "Alogin.html#";
+                }
+            } 
         },
         error: function(request, status, error) {
             console.log(error);
             console.log(status);
         }
     })
-
-    alert("Welcome to AcademicDA");
-    goToDashboard();
+    
+   
 });
 
 
