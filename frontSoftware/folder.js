@@ -317,7 +317,7 @@ $(document).on('click', '.folderattt', function() {
            // $.each(result, function(i, item){
             $('#dokSpecifik').append('<p>'+result.docId+'</p>'+'</br>');
             $('#dokSpecifik').append('<p>'+result.name+'</p>'+'</br>');
-            $('#dokSpecifik').append('<img/>'+'</br>');
+            $('#dokSpecifik').append('<img id = "fotoDok"/>'+'</br>');
             document.getElementById("fotoDok").src =result.docPath;
             
             
