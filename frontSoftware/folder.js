@@ -260,7 +260,7 @@ $(document).on('click', '.folderattt', function() {
           console.log(result);
             $.each(result, function(i, item){
             
-            $('#getDocuments2').append('<p>'+item.name+'</p>'+'</br>');
+            $('#getDocuments2').append('<div>'+'<button class = "dokS">'+item.docId+'</button>'+": "+'<p>'+item.name+'</p>'+'</div>'+'</br>');
             
           console.log("Success: ", item.name);
          // var x =$("#folderattt"). value = item.folderID;
@@ -272,6 +272,48 @@ $(document).on('click', '.folderattt', function() {
          } ,
          error : function(e) {
            $("#getDocuments2").html("<strong>You cant have two documets with the same name!</strong>");
+           console.log("ERROR: ", e);
+         }
+        
+ })
+ });
+ //Shfaq dokumentin specifik
+ $(document).on('click', '.dokS', function() {
+    var x = $(this).text();
+
+
+    console.log("u prek butoni");
+   // var x =document.getElementsByClassName("folderattt").text;
+    console.log(x);
+    
+  
+     $.ajax({
+         type : "get",
+         url :  "http://localhost:8080/api/professor/getDoc/"+x,
+         contentType: "application/json; charset=utf-8",
+         dataType: "json",
+        // data: JSON.stringify(dokumentat),
+         success: function(result){
+            $('#dokSpecifik').empty();
+          
+          console.log(result);
+           // $.each(result, function(i, item){
+            $('#dokSpecifik').append('<p>'+result.docId+'</p>'+'</br>');
+            $('#dokSpecifik').append('<p>'+result.name+'</p>'+'</br>');
+            $('#dokSpecifik').append('<img/>'+'</br>');
+            document.getElementById("fotoDok").src =result.docPath;
+            
+            
+          console.log("Success: ", item);
+         // var x =$("#folderattt"). value = item.folderID;
+          //console.log(x);
+          
+ 
+             //    });
+     
+         } ,
+         error : function(e) {
+           $("#dokSpecifik").html("<strong>You cant have two documets with the same name!</strong>");
            console.log("ERROR: ", e);
          }
         
