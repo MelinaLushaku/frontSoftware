@@ -294,6 +294,106 @@ $(document).on('click', '.folderattt', function() {
         
  })
  });
+
+//komenti per dokumentin specifik
+$(document).on('click', '.komenti', function() {
+    var x = $(this).text();
+
+
+    console.log("u prek butoni");
+   // var x =document.getElementsByClassName("folderattt").text;
+    console.log(x);
+    
+  
+     $.ajax({
+         type : "get",
+         url :  "http://localhost:8080/api/professor/commentByDoc/"+x,
+         contentType: "application/json; charset=utf-8",
+         dataType: "json",
+        // data: JSON.stringify(dokumentat),
+         success: function(result){
+            $('#comApp').empty();
+        
+          var lista = result.data;
+          if(lista !=null){
+            $('#comApp').append('<p>'+'Komentet e vendosura jane:'+'</p>');
+            $.each(lista, function(i, item){
+           
+            $('#comApp').append('<p>'+item.description+'</p>'+' Koment nga: '+'<p>'+item.createdBy+'</p>'+'</br>');
+            
+          console.log("Success: ", item.name);
+         // var x =$("#folderattt"). value = item.folderID;
+          //console.log(x);
+          
+ 
+                 });}
+                 else{
+
+                    $('#comApp').append('<p>'+result.errori+'</p>');
+
+                 }
+     
+         } ,
+         error : function(e) {
+           $("#getDocuments2").html("<strong>You cant have two documets with the same name!</strong>");
+           console.log("ERROR: ", e);
+         }
+        
+ })
+ });
+
+ //merre aprovimin per perkatess
+ $(document).on('click', '.aprovimi', function() {
+    var x = $(this).text();
+
+
+    console.log("u prek butoni");
+   // var x =document.getElementsByClassName("folderattt").text;
+    console.log(x);
+    
+  
+     $.ajax({
+         type : "get",
+         url :  "http://localhost:8080/api/professor/approveByDoc/"+x,
+         contentType: "application/json; charset=utf-8",
+         dataType: "json",
+        // data: JSON.stringify(dokumentat),
+         success: function(result){
+            $('#comApp').empty();
+        
+          var lista = result.data;
+          if(lista !=null){
+            $('#comApp').append('<p>'+'Komentet e vendosura jane:'+'</p>');
+            $.each(lista, function(i, item){
+                if(item.approveRefuse == true){
+                    $('#comApp').append('<button style="background:green;">'+"Dokumenti eshte aprovuar"+'</button>'+'</br>');
+                }else{
+                    $('#comApp').append('<button style="background:red;">'+"Dokumenti nuk aprovuar"+'</button>'+'</br>');
+                }
+           
+           
+            
+          console.log("Success: ", item.name);
+         // var x =$("#folderattt"). value = item.folderID;
+          //console.log(x);
+          
+ 
+                 });}
+                 else{
+
+                    $('#comApp').append('<p>'+result.errori+'</p>');
+
+                 }
+     
+         } ,
+         error : function(e) {
+           $("#getDocuments2").html("<strong>Erro in request!</strong>");
+           console.log("ERROR: ", e);
+         }
+        
+ })
+ });
+
  //Shfaq dokumentin specifik
  $(document).on('click', '.dokS', function() {
     var x = $(this).text();
@@ -319,6 +419,15 @@ $(document).on('click', '.folderattt', function() {
             $('#dokSpecifik').append('<p>'+result.name+'</p>'+'</br>');
             $('#dokSpecifik').append('<img id = "fotoDok"/>'+'</br>');
             document.getElementById("fotoDok").src =result.docPath;
+            $('#dokSpecifik').append('<p>'+result.type+'</p>'+'</br>'); 
+            $('#dokSpecifik').append('<p>'+result.creationD+'</p>'+'</br>');
+            $('#dokSpecifik').append('<p>'+result.editedD+'</p>'+'</br>');
+            $('#dokSpecifik').append('<p>'+result.fileSize+'</p>'+'</br>');
+            $('#dokSpecifik').append('<lable>Get comments for document with id:</label>'+'</br>');
+            $('#dokSpecifik').append('<button class = "komenti">'+result.docId+'</button>'+'</br>');
+
+            $('#dokSpecifik').append('<lable>Get approvement for document with id:</label>'+'</br>');
+            $('#dokSpecifik').append('<button class = "aprovimi">'+result.docId+'</button>'+'</br>');
             
             
           console.log("Success: ", item);
