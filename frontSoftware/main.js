@@ -245,27 +245,20 @@ $( document ).ready(function() {
         success: function(result){
            
             $('#getResultDiv').empty();
-           
-            var elementi=0; 
-        $.each(result, function(i, item){
-            
-            $('#getResultDiv').append('<p>'+item.name+'</p></br>');
-
-               
-           
-           
-            //document.getElementById('getResultDiv').innerHTML = result;
-            
-         // $('#getResultDiv .list-group').append("tekst prov");
-         console.log("Success: ", item);
-                });
-               // alert(item.name+" "+item.email)
-          //alert(item.FirstName+" "+item.LastName)
           
-          //console.log("Success: ", item.name);
-           // alert(result)
+            var x = result.data;
+            if(x != null ){
+            $.each(x, function(i, item){
             
-          
+                $('#getResultDiv').append('<p>'+item.name+'</p>'+'</div>'+'</br>');
+                
+              console.log("Success: ", item.name);
+       
+                     });
+                    
+                    }else{
+                        $('#getResultDiv').append('<p>'+result.errori+'</p>'+'</div>'+'</br>');
+                    }
         },
         error : function(e) {
             
@@ -275,7 +268,9 @@ $( document ).ready(function() {
       });  
     }
   })
- 
+
+
+
 
 /*function showUserData() {
     var prof = JSON.parse(localStorage.getItem('professor'));

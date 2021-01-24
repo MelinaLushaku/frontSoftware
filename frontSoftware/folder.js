@@ -200,10 +200,15 @@ $("#getFolders").click(function(e){
         dataType: "json",
        //data: JSON.stringify(login),
         success: function(result){
+
         $('#getResultDiv2').empty();
         $('#getDocuments2').empty();
-         $.each(result, function(i, item){
-          
+        $('#dokSpecifik').empty();
+
+        var y =result.data;
+        if(y != null){
+         $.each(y, function(i, item){
+            
            $('#getResultDiv2').append('<button type="button" class="folderattt">'+item.name+'</button>'+'</br>');
            
          console.log("Success: ", item.name);
@@ -215,6 +220,9 @@ $("#getFolders").click(function(e){
          
 
                 });
+            }else {
+                $('#getResultDiv2').append('<p>'+result.errori+'</p>'+'</br>');
+            }
     
         } ,
         error : function(e) {
@@ -255,10 +263,14 @@ $(document).on('click', '.folderattt', function() {
         // data: JSON.stringify(dokumentat),
          success: function(result){
           $('#getDocuments2').empty();
-          $('#getDocuments2').append('<p>Dokuementet jane:</p>'+'</br>');
+          $('#dokSpecifik').empty();
+         
           
           console.log(result);
-            $.each(result, function(i, item){
+          var lista = result.data;
+          if(lista !=null){
+            $('#getDocuments2').append('<p>Dokuementet jane:</p>'+'</br>');
+            $.each(lista, function(i, item){
             
             $('#getDocuments2').append('<div>'+'<button class = "dokS">'+item.docId+'</button>'+": "+'<p>'+item.name+'</p>'+'</div>'+'</br>');
             
@@ -267,7 +279,12 @@ $(document).on('click', '.folderattt', function() {
           //console.log(x);
           
  
-                 });
+                 });}
+                 else{
+
+                    $('#getDocuments2').append('<p>'+result.errori+'</p>');
+
+                 }
      
          } ,
          error : function(e) {
@@ -387,3 +404,4 @@ $("#docnumber").click(function(e){
   })
  });
 
+ 
