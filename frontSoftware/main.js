@@ -246,12 +246,12 @@ $( document ).ready(function() {
            
             $('#getResultDiv').empty();
            
-            
+            var elementi=0; 
         $.each(result, function(i, item){
-           
-            $('#getResultDiv').append('<p>'+item[0].name+'</p></br>');
-
             
+            $('#getResultDiv').append('<p>'+item.name+'</p></br>');
+
+               
            
            
             //document.getElementById('getResultDiv').innerHTML = result;
