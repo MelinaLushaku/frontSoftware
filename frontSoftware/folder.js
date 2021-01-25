@@ -17,17 +17,17 @@
 function validate() {
     let inputs = document.querySelectorAll("input");
     let test = document.getElementsByTagName("input");
-     
+
     addfolder = {
-       
-        name:$("#foldername").val(),
-        professor:$("#professorid").val()
+
+        name: $("#foldername").val(),
+        professor: $("#professorid").val()
     }
 
     var input = document.getElementById("foldername").value;
     var input1 = document.getElementById("professorid").value;
     if (input.trim() == "" && input1.trim() == "") {
-       // alert('please fill data')
+        // alert('please fill data')
         return;
     }
 
@@ -86,7 +86,7 @@ function validate() {
 
 
 var addfolder = {
-    
+
     name: "",
     professor: 0
 }
@@ -95,7 +95,7 @@ $("#submit1").click(function(e) {
     validate()
     e.preventDefault();
     console.log(addfolder);
-   // goToDashboard2();
+    // goToDashboard2();
     $.ajax({
         url: "http://localhost:8080/api/professor/addFolder3",
         type: 'post',
@@ -103,28 +103,30 @@ $("#submit1").click(function(e) {
         dataType: "json",
         data: JSON.stringify(addfolder),
         success: function(res) {
-           // goToDashboard();
-           
+            // goToDashboard();
+
             localStorage.setItem('folder', JSON.stringify(res))
-            
-            
+
+
             //goToDashboard2();
-           
+
         },
         error: function(request, status, error) {
             console.log(error);
             console.log(status);
         }
     })
-    if(validate()){
-    
-    alert("Folder has been saved");
-    goToDashboard2();
-    }else{
-    alert ("Please fill the inputs");
-    window.location.href = "addFolderPage.html";
+    if (validate()) {
+
+        alert("Folder has been saved");
+        goToDashboard2();
+    } //else if (res.exists) {
+    //alert("Folder exists");}
+    else {
+        alert("Please fill the inputs");
+        window.location.href = "addFolderPage.html";
     }
-  
+
 });
 
 function goToDashboard2() {
@@ -132,18 +134,18 @@ function goToDashboard2() {
 }
 
 
-function validate3(){
+function validate3() {
 
     deleteFolder = {
-       
-        modelId:$("#deleteF").val()
-        
+
+        modelId: $("#deleteF").val()
+
     }
 
     var input = document.getElementById("deleteF").value;
 
     if (input.trim() == "") {
-       // alert('please fill folder Id')
+        // alert('please fill folder Id')
         return;
     }
 
@@ -170,17 +172,17 @@ $("#deleteFol").click(function(e) {
         data: JSON.stringify(deleteFolder),
         success: function(res) {
             localStorage.setItem('folder', JSON.stringify(res))
-            
+
         },
         error: function(request, status, error) {
             console.log(error);
             console.log(status);
         }
     })
-    if(validate3()){
+    if (validate3()) {
         alert("Folder has been deleted");
-    goToDashboard2();
-    }else{
+        goToDashboard2();
+    } else {
         alert('please fill folder Id');
         alert("No folder has been deleted");
         goToDashboard2();
@@ -189,339 +191,146 @@ $("#deleteFol").click(function(e) {
 
 
 
-$("#getFolders").click(function(e){
-   console.log(1);
-   var username =document.getElementById("userNamii").value;
-   $('#getResultDiv2').empty();
-   $('#getDocuments2').empty();
-   $('#dokSpecifik').empty();
+$("#getFolders").click(function(e) {
+    console.log(1);
+    var username = document.getElementById("userNamii").value;
+
     $.ajax({
-        type : "get",
-        url :  "http://localhost:8080/api/professor/getFoldByUser/"+username,
+        type: "get",
+        url: "http://localhost:8080/api/professor/getFoldByUser/" + username,
         contentType: "application/json; charset=utf-8",
         dataType: "json",
-       //data: JSON.stringify(login),
-        success: function(result){
+        //data: JSON.stringify(login),
+        success: function(result) {
+            $('#getResultDiv2').empty();
+            $.each(result, function(i, item) {
 
-        $('#getResultDiv2').empty();
-        $('#getDocuments2').empty();
-        $('#dokSpecifik').empty();
+                $('#getResultDiv2').append('<button id="folderattt">' + item.name + '</button>' + '</br>');
 
-        var y =result.data;
-        if(y != null){
-         $.each(y, function(i, item){
-            
-           $('#getResultDiv2').append('<button type="button" class="folderattt">'+item.name+'</button>'+'</br>');
-           
-         console.log("Success: ", item.name);
-         document.getElementsByClassName("folderattt").val = item.folderID;
-        
-         var x =document.getElementsByClassName("folderattt").val;
-        // document.getElementById("folderattt").setAttribute("id","folderattt"+x);
-         console.log(x);
-         
+                console.log("Success: ", item.name);
 
-                });
-            }else {
-                $('#getResultDiv2').append('<p>'+result.errori+'</p>'+'</br>');
-            }
-    
-        } ,
-        error : function(e) {
-          $("#getResultDiv2").html("<strong>Nuk keni specifikuar username-in tuaj</strong>");
-          console.log("ERROR: ", e);
+
+            });
+
+        },
+        error: function(e) {
+            $("#getResultDiv2").html("<strong>You haven't specify your username</strong>");
+            console.log("ERROR: ", e);
         }
-       
-})
+
+    })
+});
+$("#sortbyname").click(function(e) {
+    $.ajax({
+        url: "http://localhost:8080/api/user/nameSort",
+        type: 'get',
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+
+        success: function(result) {
+            $('#getResultDiv2').empty();
+            $.each(result, function(i, item) {
+
+                $('#getResultDiv2').append(item.name + '</br>');
+
+                console.log("Success: ", item.name);
+
+
+            });
+
+        },
+        error: function(e) {
+            $("#getResultDiv2").html("<strong>You haven't specify your username</strong>");
+            console.log("ERROR: ", e);
+        }
+
+    })
 });
 
-//merri dokumentat
 
-/*function validateDok(){
-    
-    dokumentat = {
-        modelId:$("#folderattt").val()
-    }
-}
-dokumentat = {
-    modelId:""
-}*/
+$("#sortbyname").click(function(e) {
+    $.ajax({
+        url: "http://localhost:8080/api/user/sortDoc/nameSort",
+        type: 'get',
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
 
+        success: function(result) {
+            $('#getResultDiv2').empty();
+            $.each(result, function(i, item) {
 
-$(document).on('click', '.folderattt', function() {
-    var x = $(this).text();
+                $('#getResultDiv2').append(item.name + '</br>');
 
-
-    console.log("u prek butoni");
-   // var x =document.getElementsByClassName("folderattt").text;
-    console.log(x);
-    
-  
-     $.ajax({
-         type : "get",
-         url :  "http://localhost:8080/api/professor/getDocByFolder/"+x,
-         contentType: "application/json; charset=utf-8",
-         dataType: "json",
-        // data: JSON.stringify(dokumentat),
-         success: function(result){
-          $('#getDocuments2').empty();
-          $('#dokSpecifik').empty();
-          $('#comApp').empty();
-         
-          
-          console.log(result);
-          var lista = result.data;
-          if(lista !=null){
-            $('#getDocuments2').append('<p>Dokuementet jane:</p>'+'</br>');
-            $.each(lista, function(i, item){
-            
-            $('#getDocuments2').append('<div>'+'<button class = "dokS">'+item.docId+'</button>'+": "+'<p>'+item.name+'</p>'+'</div>'+'</br>');
-            
-          console.log("Success: ", item.name);
-         // var x =$("#folderattt"). value = item.folderID;
-          //console.log(x);
-          
- 
-                 });}
-                 else{
-
-                    $('#getDocuments2').append('<p>'+result.errori+'</p>');
-
-                 }
-     
-         } ,
-         error : function(e) {
-           $("#getDocuments2").html("<strong>You cant have two documets with the same name!</strong>");
-           console.log("ERROR: ", e);
-         }
-        
- })
- });
-
-//komenti per dokumentin specifik
-$(document).on('click', '.komenti', function() {
-    var x = $(this).text();
+                console.log("Success: ", item.name);
 
 
-    console.log("u prek butoni");
-   // var x =document.getElementsByClassName("folderattt").text;
-    console.log(x);
-    
-  
-     $.ajax({
-         type : "get",
-         url :  "http://localhost:8080/api/professor/commentByDoc/"+x,
-         contentType: "application/json; charset=utf-8",
-         dataType: "json",
-        // data: JSON.stringify(dokumentat),
-         success: function(result){
-            $('#comApp').empty();
-        
-          var lista = result.data;
-          if(lista !=null){
-            $('#comApp').append('<p>'+'Komentet e vendosura jane:'+'</p>');
-            $.each(lista, function(i, item){
-           
-            $('#comApp').append('<p>'+item.description+'</p>'+' Koment nga: '+'<p>'+item.createdBy+'</p>'+'</br>');
-            
-          console.log("Success: ", item.name);
-         // var x =$("#folderattt"). value = item.folderID;
-          //console.log(x);
-          
- 
-                 });}
-                 else{
+            });
 
-                    $('#comApp').append('<p>'+result.errori+'</p>');
+        },
+        error: function(e) {
+            $("#getResultDiv2").html("<strong>You haven't specify your username</strong>");
+            console.log("ERROR: ", e);
+        }
 
-                 }
-     
-         } ,
-         error : function(e) {
-           $("#getDocuments2").html("<strong>You cant have two documets with the same name!</strong>");
-           console.log("ERROR: ", e);
-         }
-        
- })
- });
+    })
+});
 
- //merre aprovimin per perkatess
- $(document).on('click', '.aprovimi', function() {
-    var x = $(this).text();
+$("#sortbydate").click(function(e) {
+    $.ajax({
+        url: "http://localhost:8080/api/user/sortDoc/dateSort",
+        type: 'get',
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+
+        success: function(result) {
+            $('#getResultDiv2').empty();
+            $.each(result, function(i, item) {
+
+                $('#getResultDiv2').append(item.name + '</br>');
+
+                console.log("Success: ", item.name);
 
 
-    console.log("u prek butoni");
-   // var x =document.getElementsByClassName("folderattt").text;
-    console.log(x);
-    
-  
-     $.ajax({
-         type : "get",
-         url :  "http://localhost:8080/api/professor/approveByDoc/"+x,
-         contentType: "application/json; charset=utf-8",
-         dataType: "json",
-        // data: JSON.stringify(dokumentat),
-         success: function(result){
-            $('#comApp').empty();
-        
-          var lista = result.data;
-          if(lista !=null){
-            $('#comApp').append('<p>'+'Komentet e vendosura jane:'+'</p>');
-            $.each(lista, function(i, item){
-                if(item.approveRefuse == true){
-                    $('#comApp').append('<button style="background:green;">'+"Dokumenti eshte aprovuar"+'</button>'+'</br>');
-                }else{
-                    $('#comApp').append('<button style="background:red;">'+"Dokumenti nuk aprovuar"+'</button>'+'</br>');
-                }
-           
-           
-            
-          console.log("Success: ", item.name);
-         // var x =$("#folderattt"). value = item.folderID;
-          //console.log(x);
-          
- 
-                 });}
-                 else{
+            });
 
-                    $('#comApp').append('<p>'+result.errori+'</p>');
+        },
+        error: function(e) {
+            $("#getResultDiv2").html("<strong>You haven't specify your username</strong>");
+            console.log("ERROR: ", e);
+        }
 
-                 }
-     
-         } ,
-         error : function(e) {
-           $("#getDocuments2").html("<strong>Erro in request!</strong>");
-           console.log("ERROR: ", e);
-         }
-        
- })
- });
-
- //Shfaq dokumentin specifik
- $(document).on('click', '.dokS', function() {
-    var x = $(this).text();
-
-
-    console.log("u prek butoni");
-   // var x =document.getElementsByClassName("folderattt").text;
-    console.log(x);
-    
-  
-     $.ajax({
-         type : "get",
-         url :  "http://localhost:8080/api/professor/getDoc/"+x,
-         contentType: "application/json; charset=utf-8",
-         dataType: "json",
-        // data: JSON.stringify(dokumentat),
-         success: function(result){
-            $('#dokSpecifik').empty();
-            $('#comApp').empty();
-          
-          console.log(result);
-           // $.each(result, function(i, item){
-            $('#dokSpecifik').append('<p>'+result.docId+'</p>'+'</br>');
-            $('#dokSpecifik').append('<p>'+result.name+'</p>'+'</br>');
-            $('#dokSpecifik').append('<img id = "fotoDok"/>'+'</br>');
-            document.getElementById("fotoDok").src =result.docPath;
-            $('#dokSpecifik').append('<p>'+result.type+'</p>'+'</br>'); 
-            $('#dokSpecifik').append('<p>'+result.creationD+'</p>'+'</br>');
-            $('#dokSpecifik').append('<p>'+result.editD+'</p>'+'</br>');
-            $('#dokSpecifik').append('<p>'+result.fileSize+'</p>'+'</br>');
-            $('#dokSpecifik').append('<lable>Get comments for document with id:</label>'+'</br>');
-            $('#dokSpecifik').append('<button class = "komenti">'+result.docId+'</button>'+'</br>');
-
-            $('#dokSpecifik').append('<lable>Get approvement for document with id:</label>'+'</br>');
-            $('#dokSpecifik').append('<button class = "aprovimi">'+result.docId+'</button>'+'</br>');
-            
-            
-          console.log("Success: ", item);
-         // var x =$("#folderattt"). value = item.folderID;
-          //console.log(x);
-          
- 
-             //    });
-     
-         } ,
-         error : function(e) {
-           $("#dokSpecifik").html("<strong>You cant have two documets with the same name!</strong>");
-           console.log("ERROR: ", e);
-         }
-        
- })
- });
-
-
-
-
-$("#foldernumber").click(function(e){
-   // validate5();
-    console.log(1);
-   var useri = document.getElementById("userNamee").value;
-     $.ajax({
-         type : "get",
-         url :  "http://localhost:8080/api/professor/numberOfFolders/"+useri,
-         contentType: "application/json; charset=utf-8",
-         dataType: "json",
-      //  data: JSON.stringify(total),
-         success: function(result){
-            var y = result.errori
-            if(y == null){
-                            alert("Profesori me username "+useri+" ka gjithsej "+result.data+" folder");
-            }else{
-                alert(result.errori);   
-            }
-         // $('#getResultDiv2').empty();
-           //   $.each(result, function(i, item){
-           // $('#getResultDiv2').append('<button id="folderattt">'+item.name+'</button>'+'</br>');
-            
-          //console.log("Success: ", item.name);
-          
- 
-                
-         } ,
-         error : function(e) {
-          alert("You havet specify your username!");
-           console.log("ERROR: ", e);
-         }
-        
- })
+    })
 });
 
 
 
-$("#docnumber").click(function(e){
+$("#docnumber").click(function(e) {
     // validate5();
-     console.log(1);
+    console.log(1);
     var useri = document.getElementById("userNamee").value;
-      $.ajax({
-          type : "get",
-          url :  "http://localhost:8080/api/professor/numberOfDoc/"+useri,
-          contentType: "application/json; charset=utf-8",
-          dataType: "json",
-       //  data: JSON.stringify(total),
-          success: function(result){
-                var y = result.errori;
-                if(y == null){
-             alert("Profesori me username "+useri+" ka gjithsej "+result.data+" dokumente");
-                }else{
-                    alert(result.errori)
-                }
+    $.ajax({
+        type: "get",
+        url: "http://localhost:8080/api/professor/numberOfDoc/" + useri,
+        contentType: "application/json; charset=utf-8",
+        dataType: "json",
+        //  data: JSON.stringify(total),
+        success: function(result) {
 
-          // $('#getResultDiv2').empty();
+            alert("Profesori me username " + useri + " ka gjithsej " + result + " dokumente");
+
+            // $('#getResultDiv2').empty();
             //   $.each(result, function(i, item){
             // $('#getResultDiv2').append('<button id="folderattt">'+item.name+'</button>'+'</br>');
-             
-           //console.log("Success: ", item.name);
-           
-  
-                 
-          } ,
-          error : function(e) {
-           alert("You havet specify your username!");
-            console.log("ERROR: ", e);
-          }
-         
-  })
- });
 
- 
+            //console.log("Success: ", item.name);
+
+
+
+        },
+        error: function(e) {
+            alert("You havet specify your username!");
+            console.log("ERROR: ", e);
+        }
+
+    })
+});
