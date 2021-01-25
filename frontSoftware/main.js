@@ -26,8 +26,8 @@ function validate(form) {
     
     var input = document.getElementById("username").value;
     var input1 = document.getElementById("password").value;   
-    if (input.trim() == ""  && input1.trim =="") {
-        alert('please fill data')
+    if (input.trim() == ""  && input1.trim() =="") {
+      //  alert('please fill data');
         return false;
     }
 
@@ -57,8 +57,9 @@ else if (form == 1){
     var input6 = document.getElementById("degree").value;   
     if ( input2.trim() == "" && input3.trim() == ""
     && input4.trim() == "" && input5.trim() == "" && input6.trim() == "") {
-        alert('please fill data')
+      //  alert('please fill data')
         return false;
+        
     }
 
     // if (form == 0 && login[username] == "" && login[password] == "") {
@@ -108,7 +109,7 @@ var login = {
 }
 
 $("#submit").click(function(e) {
-    validate(0)
+    validate(0);
     e.preventDefault();
     console.log(login);
     
@@ -121,21 +122,32 @@ $("#submit").click(function(e) {
         data: JSON.stringify(login),
         
         success: function(res) {
+          
             var prov =res.errori;
-            if(prov == null){
-            localStorage.setItem('professor', JSON.stringify(res.data))
-             goToDashboard();
-            }
-             else{
-                    if(validate(0) == false){
-                       window.location.href = "Alogin.html#";
-                    }else{
-                    alert(res.errori);
+             /*  if (validate(0) == false){
+               
+               window.location.href = "Alogin.html";
+               }*/
+               //var prov =res.errori;
+               if (prov == null || validate(0) == false){
+                   if(validate(0) == false){
+                       alert("please fill data");
+                    window.location.href = "Alogin.html";
+                   }else{
                     window.location.href = "Alogin.html#";
-                    }
-                } 
+                    localStorage.setItem('professor', JSON.stringify(res.data))
+                    goToDashboard();
+                   }
+             
+               }
+             else{
+              
+                alert(res.errori);
+                window.location.href = "Alogin.html";
+            
                  
-            } ,
+            } 
+        },
         error: function(request, status, error) {
             console.log(error);
             console.log(status);
@@ -224,19 +236,22 @@ $("#submitRegister").click(function(e) {
         data: JSON.stringify(register),
         success: function(res) {
             var e = res.errori;
-            if(e == null){
+            if(e == null || validate(1) == false){
+                if(validate(1) == false){
+                    alert("please fill data");
+                    window.location.href = "Alogin.html#";
+                }else{
             localStorage.setItem('professor', JSON.stringify(res.data))
             alert("Welcome to AcademicDA");
             goToDashboard();
+                }
             }
             else{
-                if(validate(1) == false){
-                   window.location.href = "Alogin.html#";
-                }else{
+               
                 alert(res.errori);
                 window.location.href = "Alogin.html#";
                 }
-            } 
+            
         },
         error: function(request, status, error) {
             console.log(error);
