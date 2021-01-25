@@ -263,6 +263,10 @@
             color: #044A50;
             margin-left: 500px;
         }
+        #deleteD {
+            color: #044A50;
+            margin-left: 500px;
+        }
         
         .number {
             flex-direction: row;
@@ -292,6 +296,16 @@
             color: wheat;
             margin-left: 500px;
         }
+          
+        #deleteDoc {
+            height: 50px;
+            width: 100px;
+            background-color: #044A50;
+            color: wheat;
+            margin-left: 500px;
+        }
+
+        
         
         #deleteFol:hover {
             background-color: wheat;
