@@ -103,9 +103,18 @@ $("#submit1").click(function(e) {
         dataType: "json",
         data: JSON.stringify(addfolder),
         success: function(res) {
-           // goToDashboard();
+            var y = res.errori;
+            if(y == null){
            
+        
             localStorage.setItem('folder', JSON.stringify(res))
+            alert("Folderi u shtua me sukses")
+            goToDashboard2();
+            }else {
+                alert(res.errori);
+                window.location.href = "addfolderPage.html"
+                
+            }
             
             
             //goToDashboard2();
@@ -116,14 +125,14 @@ $("#submit1").click(function(e) {
             console.log(status);
         }
     })
-    if(validate()){
+    /*if(validate()){
     
     alert("Folder has been saved");
     goToDashboard2();
     }else{
     alert ("Please fill the inputs");
     window.location.href = "addFolderPage.html";
-    }
+    }*/
   
 });
 
