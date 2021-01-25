@@ -192,7 +192,9 @@ $("#deleteFol").click(function(e) {
 $("#getFolders").click(function(e){
    console.log(1);
    var username =document.getElementById("userNamii").value;
-    
+   $('#getResultDiv2').empty();
+   $('#getDocuments2').empty();
+   $('#dokSpecifik').empty();
     $.ajax({
         type : "get",
         url :  "http://localhost:8080/api/professor/getFoldByUser/"+username,
@@ -226,7 +228,7 @@ $("#getFolders").click(function(e){
     
         } ,
         error : function(e) {
-          $("#getResultDiv2").html("<strong>You haven't specify your username</strong>");
+          $("#getResultDiv2").html("<strong>Nuk keni specifikuar username-in tuaj</strong>");
           console.log("ERROR: ", e);
         }
        
@@ -264,6 +266,7 @@ $(document).on('click', '.folderattt', function() {
          success: function(result){
           $('#getDocuments2').empty();
           $('#dokSpecifik').empty();
+          $('#comApp').empty();
          
           
           console.log(result);
@@ -412,6 +415,7 @@ $(document).on('click', '.komenti', function() {
         // data: JSON.stringify(dokumentat),
          success: function(result){
             $('#dokSpecifik').empty();
+            $('#comApp').empty();
           
           console.log(result);
            // $.each(result, function(i, item){
@@ -421,7 +425,7 @@ $(document).on('click', '.komenti', function() {
             document.getElementById("fotoDok").src =result.docPath;
             $('#dokSpecifik').append('<p>'+result.type+'</p>'+'</br>'); 
             $('#dokSpecifik').append('<p>'+result.creationD+'</p>'+'</br>');
-            $('#dokSpecifik').append('<p>'+result.editedD+'</p>'+'</br>');
+            $('#dokSpecifik').append('<p>'+result.editD+'</p>'+'</br>');
             $('#dokSpecifik').append('<p>'+result.fileSize+'</p>'+'</br>');
             $('#dokSpecifik').append('<lable>Get comments for document with id:</label>'+'</br>');
             $('#dokSpecifik').append('<button class = "komenti">'+result.docId+'</button>'+'</br>');
@@ -460,9 +464,12 @@ $("#foldernumber").click(function(e){
          dataType: "json",
       //  data: JSON.stringify(total),
          success: function(result){
-               
-            alert("Profesori me username "+useri+" ka gjithsej "+result+" folder");
-
+            var y = result.errori
+            if(y == null){
+                            alert("Profesori me username "+useri+" ka gjithsej "+result.data+" folder");
+            }else{
+                alert(result.errori);   
+            }
          // $('#getResultDiv2').empty();
            //   $.each(result, function(i, item){
            // $('#getResultDiv2').append('<button id="folderattt">'+item.name+'</button>'+'</br>');
@@ -493,9 +500,13 @@ $("#docnumber").click(function(e){
           dataType: "json",
        //  data: JSON.stringify(total),
           success: function(result){
-                
-             alert("Profesori me username "+useri+" ka gjithsej "+result+" dokumente");
- 
+                var y = result.errori;
+                if(y == null){
+             alert("Profesori me username "+useri+" ka gjithsej "+result.data+" dokumente");
+                }else{
+                    alert(result.errori)
+                }
+
           // $('#getResultDiv2').empty();
             //   $.each(result, function(i, item){
             // $('#getResultDiv2').append('<button id="folderattt">'+item.name+'</button>'+'</br>');
