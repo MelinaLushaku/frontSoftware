@@ -23,7 +23,7 @@ function validate() {
     
     var inputi8 = document.getElementById("foldID").value;
     if (inputi2.trim() == "" && inputi5.trim() == "" && inputi6.trim() == "") {
-        alert('please fill data')
+       // alert('please fill data')
         return;
     }
     return true;
@@ -38,17 +38,17 @@ var addDocument = {
     creationD: null,
     path: "",
     editedD: null,
-    fileSize: null,
+    fileSize: 0,
     name: "",
     type: "",
-    folder: null
+    folder: 0
 
 
 }
 
 
 $("#submit").click(function(e) {
-   // validate(0)
+   validate(0)
     e.preventDefault();
     console.log(addDocument);
 
@@ -59,7 +59,16 @@ $("#submit").click(function(e) {
         dataType: "json",
         data: JSON.stringify(addDocument),
         success: function(res) {
-            localStorage.setItem('document', JSON.stringify(res))
+            var y = res.errori;
+            if(y == null){
+            localStorage.setItem('document', JSON.stringify(res.data))
+            alert("Document eshte shtuar me sukses");
+            goToDashboard();
+            }else {
+                alert(res.errori);
+                
+               // window.location.href = "DocumentADD.html"
+            }
             
         },
         error: function(request, status, error) {
@@ -67,22 +76,7 @@ $("#submit").click(function(e) {
             console.log(status);
         }
     })
-    if(validate(0)){
-        alert("Document has been added");
-        goToDashboard();
-    }
-    else{
-        window.href.location = "DocumentADD.html"
-    }
+   
 });
 
 
-function showUserData() {
-    var emp = JSON.parse(localStorage.getItem('document'));
-
-    var rows = createRows(emp.tasks)
-    var index = 0;
-    while (index < rows.length) {
-        $('#tableBody').append(rows[index++]);
-    }
-}

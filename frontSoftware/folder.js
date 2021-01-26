@@ -249,6 +249,7 @@ $("#getFolders").click(function(e) {
     $('#getDocuments2').empty();
     $('#dokSpecifik').empty();
     var username = document.getElementById("userNamii").value;
+    if(username != ""){
 
     $.ajax({
         type: "get",
@@ -287,9 +288,12 @@ $("#getFolders").click(function(e) {
               console.log("ERROR: ", e);
         }
 
-    })
+    })}
+    else {
+        alert ("Ju lutem specifikoni usernamen tuaj");
+    }
 });
-$("#sortbyname").click(function(e) {
+/*$("#sortbyname").click(function(e) {
     $.ajax({
         url: "http://localhost:8080/api/user/nameSort",
         type: 'get',
@@ -314,9 +318,9 @@ $("#sortbyname").click(function(e) {
         }
 
     })
-});
+});*/
 
-/*
+
 $("#sortbyname").click(function(e) {
     $.ajax({
         url: "http://localhost:8080/api/user/sortDoc/nameSort",
@@ -342,7 +346,7 @@ $("#sortbyname").click(function(e) {
         }
 
     })
-});*/
+});
 
 $("#sortbydate").click(function(e) {
     $.ajax({
@@ -642,4 +646,101 @@ $("#foldernumber").click(function(e){
 
         })
     });
+   keyword = {
+       name:""
+   }
 
+   
+   
+    $("#searchDocN").click(function (event) {
+       
+        console.log('1')
+      
+         var searchType ="nameSearch";
+         var name =document.getElementById("search").value;
+         if(name != ""){
+       
+        $.ajax({
+            url: "http://localhost:8080/api/user/searchDoc/"+searchType+"/"+name,
+            type: 'get',
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+          //  data: JSON.stringify(keyword),
+          success: function(result) {
+            $('#getResultDiv2').empty();
+            $('#getDocuments2').empty();
+            $('#dokSpecifik').empty();
+            console.log(result);
+            if(result != 0){
+            $.each(result, function(i, item) {
+
+                $('#getResultDiv2').append(item.name + '</br>');
+
+                console.log("Success: ", item.name);
+
+
+            });}
+            else alert("Nuk ekziston ndonje dokument me emer te till");
+            },
+            error: function (request, status, error) {
+                console.log(error);
+                console.log(status);
+            }
+        })}
+        else {
+            alert("Ju lutem mbushni hapsiren per kerkim");
+        }
+    
+      
+    })
+    
+
+
+
+    $("#searchDocT").click(function (event) {
+       
+        console.log('1')
+      
+         var searchType ="typeSearch";
+         var name =document.getElementById("search").value;
+         if(name != ""){
+       
+        $.ajax({
+            url: "http://localhost:8080/api/user/searchDoc/"+searchType+"/"+name,
+            type: 'get',
+            contentType: "application/json; charset=utf-8",
+            dataType: "json",
+          //  data: JSON.stringify(keyword),
+          success: function(result) {
+            $('#getResultDiv2').empty();
+            $('#getDocuments2').empty();
+            $('#dokSpecifik').empty();
+            console.log(result);
+            if(result != 0){
+            $.each(result, function(i, item) {
+
+                $('#getResultDiv2').append(item.name + '</br>');
+
+                console.log("Success: ", item.name);
+
+
+            });}
+            else {
+                alert("Nuk ekzison ndonje dokument me kete lloj: pdf,word ....");
+            }
+            },
+            error: function (request, status, error) {
+                console.log(error);
+                console.log(status);
+            }
+        })}
+        else {
+            alert("Ju lutem mbushni hapsiren per kerkim");
+        }
+    
+      
+    })
+    
+  
+
+    
