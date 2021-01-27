@@ -87,9 +87,27 @@
             line-height: 35px;
         }
         
+        #searchDocN {
+            border-color: #044A50;
+            color: #044A50;
+            width: 150px;
+            height: 30px;
+        }
+        
+        #searchDocT {
+            border-color: #044A50;
+            color: #044A50;
+            width: 150px;
+            height: 30px;
+        }
+        
+        #searchBTN {
+            margin-right: 20%;
+        }
+        
         .swiper-container {
-            width: 25%;
-            box-sizing: border-box;
+            flex-direction: column;
+            margin: 5%;
         }
         
         .swiper-wrapper {
@@ -239,7 +257,6 @@
             width: 100px;
             background-color: #044A50;
             color: wheat;
-            margin-left: 500px;
         }
         
         #addfolder:hover {
@@ -261,11 +278,11 @@
         
         #deleteF {
             color: #044A50;
-            margin-left: 500px;
         }
+        
         #deleteD {
             color: #044A50;
-            margin-left: 500px;
+            margin-top: 10%;
         }
         
         .number {
@@ -294,18 +311,37 @@
             width: 100px;
             background-color: #044A50;
             color: wheat;
-            margin-left: 500px;
         }
-          
+        
         #deleteDoc {
             height: 50px;
             width: 100px;
             background-color: #044A50;
             color: wheat;
-            margin-left: 500px;
         }
-
         
+        #sortDocPart {
+            flex-direction: column;
+        }
+        
+        #sortbyname {
+            height: 50px;
+            width: 100px;
+            background-color: #044A50;
+            color: wheat;
+        }
+        
+        #sortbydate {
+            height: 50px;
+            width: 100px;
+            background-color: #044A50;
+            color: wheat;
+        }
+        
+        #deleteDoc:hover {
+            background-color: wheat;
+            color: #044A50;
+        }
         
         #deleteFol:hover {
             background-color: wheat;
@@ -438,7 +474,7 @@
             position: absolute;
             /* or absolute */
             top: 30%;
-            left: 40%;
+            left: 25%;
             margin-top: 5%;
         }
         
@@ -476,7 +512,8 @@
         }
         
         .form-header {
-            margin: 0;
+            margin-bottom: 5%;
+            margin-right: 10%;
             font-size: 40px;
             font-family: 'Segoe UI';
             color: #044A50;
@@ -534,13 +571,23 @@
             flex-direction: column;
             background-color: #044A50;
             width: 100vw;
-            height: 25vh;
             color: white;
-            position: relative;
-            margin-right: inherit;
+            position: fixed;
             bottom: 0;
-            margin-top: 10%;
+            left: 0;
         }
+        
+        body {
+            min-height: 400px;
+            margin-bottom: 300px;
+            clear: both;
+        }
+        
+        header {
+            min-height: 50px;
+            background: lightcyan;
+        }
+        /* Trick */
         
         .pckMrk {
             display: flex;
@@ -638,11 +685,6 @@
                 margin-top: 5px;
                 margin-bottom: 5px;
             }
-            .footer {
-                display: flex;
-                flex-direction: column;
-                margin-top: 50%;
-            }
             .footbx3 {
                 margin-left: 10%;
             }
@@ -682,5 +724,17 @@
             .slider-box {
                 width: 150px;
                 height: 150px;
+            }
+            .FolderPart {
+                flex-direction: column;
+            }
+            .DocumentPart {
+                flex-direction: column;
+            }
+            #parts {
+                flex-direction: row;
+            }
+            .deleteDocPart {
+                flex-direction: row;
             }
         }

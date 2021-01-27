@@ -54,25 +54,39 @@
                 </div>
 
                 <form id="formaKryesore" action="" method="post">
-                    <div>
-                        <label class="label">Document Name</label>
-                        <input class="input" id="name" type="text" name="Document Name" placeholder="Document Name" />
-                        <label class="label" for="DocumentSize">Document Size</label>
-                        <input class="input" id="docs" type="number" name="DocumentSize" placeholder="Document Size" />
-                        <label class="label" for="DocumentType">Document Type </label>
-                        <input class="input" id="type2" type="text" name="Document Type " placeholder="Document Type " data-validation="custom" />
-                        <label class="label">Create Date</label>
-                        <input class="input" id="cdate" type="date" name="Create Date" placeholder="Create Date" />
-                        <label class="label">Edit Date</label>
-                        <input class="input" id="edate" type="date" name="Edit Date" placeholder="Edit Date" />
-                        <label class="label">Document Path</label>
-                        <input class="input" id="fileP" class="input" type="file" name="file" onclick="" accept="" placeholder="Document Path" />
-                        <label class="label">Document FoldId</label>
-                        <input class="input" id="foldID" type="number" name="Document Name" placeholder="FoldId" />
-
+                    <div class="blockss">
+                        <div class="block">
+                            <label class="label">Document Name</label>
+                            <input class="input" id="name" type="text" name="Document Name" placeholder="Document Name" />
+                        </div>
+                        <div class="block">
+                            <label class="label" for="DocumentSize">Document Size</label>
+                            <input class="input" id="docs" type="number" name="DocumentSize" placeholder="Document Size" />
+                        </div>
+                        <div class="block">
+                            <label class="label" for="DocumentType">Document Type </label>
+                            <input class="input" id="type2" type="text" name="Document Type " placeholder="Document Type " data-validation="custom" />
+                        </div>
+                        <div class="block">
+                            <label class="label">Create Date</label>
+                            <input class="input" id="cdate" type="date" name="Create Date" placeholder="Create Date" />
+                        </div>
+                        <div class="block">
+                            <label class="label">Edit Date</label>
+                            <input class="input" id="edate" type="date" name="Edit Date" placeholder="Edit Date" />
+                        </div>
+                        <div class="block">
+                            <label class="label">Document Path</label>
+                            <input class="input" id="fileP" class="input" type="file" name="file" onclick="" accept="" placeholder="Document Path" />
+                        </div>
+                        <div class="block">
+                            <label class="label">Document FoldId</label>
+                            <input class="input" id="foldID" type="number" name="Document Name" placeholder="FoldId" />
+                        </div>
                         <!--- <input class="input submit" id="submit" type="submit" value="Adddocument" />---->
-                        <input id="submit" type="submit" class="input submit" value="Adddocument" />
-
+                        <div class="block" id="blck">
+                            <input id="submit" style="background-color: #044A50; color: wheat; height: 50px; width: 100px;" type="submit" class="input submit" value="Add Document" />
+                        </div>
 
                     </div>
                 </form>

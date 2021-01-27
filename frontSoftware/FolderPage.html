@@ -25,74 +25,90 @@
 
                 <div class="choose"> Document Management Web</div>
                 <input type="text" id="search" placeholder="Search..">
-                <input id="searchDocN" type="submit" value="SearchDocName" />
-                <input id="searchDocT" type="submit" value="SearchDocType" />
+                <div id="searchBTN">
+                    <input id="searchDocN" type="submit" value="SearchDocName" />
+                    <input id="searchDocT" type="submit" value="SearchDocType" />
+                </div>
             </div>
 
 
         </div>
 
     </div>
-    <div class="lower">
-
-        <div class="middle">
 
 
-            <div class="nenmeny">
-                <button class="nmenubtn" onclick="location.href='FolderPage.html'" type="menu">Home</button>
-                <button class="nmenubtn" onclick="location.href='DocumentPage.html'" type="menu">Document</button>
-                <button class="nmenubtn" type="menu">Edit Account</button>
+    <div class="middle">
 
-                <input id="userNamee" type="text" placeholder="Username" />
-                <div class="numberbtns">
-                    <button class="number" id="foldernumber">Total folders </button>
-                    <button class="number" id="docnumber">Total documents </button>
-                </div>
+
+        <div class="nenmeny">
+            <button class="nmenubtn" onclick="location.href='FolderPage.html'" type="menu">Home</button>
+            <button class="nmenubtn" onclick="location.href='DocumentADD.html'" type="menu">Document</button>
+            <button class="nmenubtn" type="menu">Edit Account</button>
+
+            <input id="userNamee" type="text" placeholder="Username" />
+            <div class="numberbtns">
+                <button class="number" id="foldernumber">Total folders </button>
+                <button class="number" id="docnumber">Total documents </button>
             </div>
+        </div>
 
 
-            <div class="form-group">
-                <div class="form-header">
-                    <h2 class="titulli1">Folders</h2>
-                </div>
-                <div class="swiper-container">
-                    <button onclick="location.href='addfolderPage.html'" id="addfolder">Add Folder</button>
-                    <label style="margin-left: 500px;" for="">DeleteDocumentByID:</label>
-                    <input id="deleteF" type="number" placeholder="Specify Id of the Folder..." />
+        <div class="form-group">
 
-                    <input id="deleteFol" type="submit" value="DeleteFold" />
+            <div class="swiper-container">
+                <div id="parts">
+                    <!-- <div class="form-header">
+                            <h2 class="titulli1">Folders</h2>
+                        </div>-->
+                    <!-- <label style="margin-left: 500px;" for="">DeleteDocumentByID:</label>-->
+                    <div class="FolderPart">
 
-                    <div>
+                        <button onclick="location.href='addfolderPage.html'" id="addfolder">Add Folder</button>
+
 
                         <input id="userNamii" type="text" placeholder="please specify your username" />
                         <button id="getFolders" type="button">Get Folders</button>
 
-                    </div>
 
-                    <button onclick="location.href='DocumentADD .html'" id="addfolder"> Add Document</button>
-                    <input id="deleteD" type="number" placeholder="Specify Id of the Document..." />
-                    <input id="deleteDoc" type="submit" value="DeleteDoc" />
-
-                    <button id="sortbyname"> Sort by name </button>
-                    <button id="sortbydate"> Sort by date </button>
-                    <div>
-
-
-                        <div id="getResultDiv2">
-
-
-
-                        </div>
-                        <div id="getDocuments2">
-                        </div>
-                        <div id="dokSpecifik">
-
-                        </div>
-                        <div id="comApp"></div>
-
+                        <input id="deleteF" type="number" placeholder="Specify Id of the Folder..." />
+                        <input id="deleteFol" type="submit" value="DeleteFold" />
 
                     </div>
 
+
+
+
+                    <div class="DocumentPart">
+
+
+                        <button onclick="location.href='DocumentADD.html'" id="addfolder"> Add Document</button>
+
+                        <input id="deleteD" type="number" placeholder="Specify Id of the Document..." />
+                        <input id="deleteDoc" type="submit" value="DeleteDoc" />
+
+
+                        <button id="sortbyname"> Sort by name </button>
+                        <button id="sortbydate"> Sort by date </button>
+
+                    </div>
+
+                </div>
+
+
+                <div>
+
+
+                    <div style="font-size: 20px;columns: #044a50; margin-top: 10%;" id="getResultDiv2">
+
+
+
+                    </div>
+                    <div id="getDocuments2">
+                    </div>
+                    <div id="dokSpecifik">
+
+                    </div>
+                    <div id="comApp"></div>
 
 
                 </div>
@@ -100,36 +116,30 @@
 
 
             </div>
+
+
+
         </div>
-        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-        <script src="folder.js"></script>
+    </div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="folder.js"></script>
 
 </body>
-<footer>
-    </div>
-    </div>
-
-    <div class="footer">
-        <div class="pckMrk" style="font-family: Calibri; font-size: 40px; ">AcademicDA</div>
+<div class="footer">
+    <div class="pckMrk" style="font-family: Calibri; font-size: 40px; ">AcademicDA</div>
 
 
-        <div class="downmenu">
-
-
-            <button id="footbtn" onclick="location.href='FolderPage.html'">Home</button>
-            <button id="footbtn" onclick="location.href='DocumentPage.html'">Document</button>
-            <button id="footbtn">Edit Account</button>
-
-        </div>
-
-
+    <div class="downmenu">
+        <button id="footbtn" onclick="location.href='FolderPage.html'">Home</button>
+        <button id="footbtn" onclick="location.href='DocumentADD.html'">Document</button>
+        <button id="footbtn">Edit Account</button>
 
     </div>
 
     <div id="copy">&copy All Rights Reserved</div>
-    </div>
 
-</footer>
+
+</div>
 
 
 </html>

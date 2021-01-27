@@ -38,7 +38,7 @@
 
             <div class="nenmeny">
                 <button class="nmenubtn" onclick="location.href='FolderPage.html'" type="menu">Home</button>
-                <button class="nmenubtn" onclick="location.href='DocumentPage.html'" type="menu">Document</button>
+                <button class="nmenubtn" onclick="location.href='DocumentADD.html'" type="menu">Document</button>
                 <button class="nmenubtn" type="menu">Edit Account</button>
                 <input id="userNamii" type="text" placeholder="Username" />
                 <div class="numberbtns">
@@ -54,11 +54,14 @@
                     <h2 class="titulli1">Add Folder</h2>
                 -->
                 <div class="block">
-
-                    <label id="label1">Folder name</label>
-                    <input id="foldername" class="input" type="text" placeholder="Folder Name..." />
-                    <label id="label1" for="">ProfID</label>
-                    <input id="professorid" class="input" type="number" placeholder="profid..." />
+                    <div id="blck">
+                        <label id="label1">Folder name</label>
+                        <input id="foldername" class="input" type="text" placeholder="Folder Name..." />
+                    </div>
+                    <div id="blck">
+                        <label id="label1" for="">ProfID</label>
+                        <input id="professorid" class="input" type="number" placeholder="profid..." />
+                    </div>
                     <input id="submit1" type="submit" class="input submit" value="Addfolder" />
                 </div>
 
@@ -76,29 +79,28 @@
     <script src="folder.js"></script>
 
 </body>
-<footer>
 
 
-    <div class="footer">
-        <div class="pckMrk" style="font-family: Calibri; font-size: 40px; ">AcademicDA</div>
+
+<div class="footer">
+    <div class="pckMrk" style="font-family: Calibri; font-size: 40px; ">AcademicDA</div>
 
 
-        <div class="downmenu">
+    <div class="downmenu">
 
 
-            <button id="footbtn" onclick="location.href='FolderPage.html'">Home</button>
-            <button id="footbtn" onclick="location.href='DocumentPage.html'">Document</button>
-            <button id="footbtn">Edit Account</button>
-
-        </div>
-
+        <button id="footbtn" onclick="location.href='FolderPage.html'">Home</button>
+        <button id="footbtn" onclick="location.href='DocumentADD.html'">Document</button>
+        <button id="footbtn">Edit Account</button>
 
     </div>
 
     <div id="copy">&copy All Rights Reserved</div>
 
+</div>
 
-</footer>
+
+
 
 
 
