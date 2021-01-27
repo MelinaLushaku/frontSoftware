@@ -481,10 +481,10 @@ $(document).on('click', '.komenti', function() {
 
             var lista = result.data;
             if (lista != null) {
-                $('#comApp').append('<p>' + 'Comments are:' + '</p>');
+                $('#comApp').append('<p style="margin-bottom:200px;">' + 'Comments are:' + '</p>');
                 $.each(lista, function(i, item) {
 
-                    $('#comApp').append('<p>' + item.description + '</p>' + ' Comment from: ' + '<p>' + item.createdBy + '</p>' + '</br>');
+                    $('#comApp').append('<p style="margin-bottom:200px;">' + item.description + '</p>' + ' Comment from: ' + '<p>' + item.createdBy + '</p>' + '</br>');
 
                     console.log("Success: ", item.name);
                     // var x =$("#folderattt"). value = item.folderID;
@@ -494,7 +494,7 @@ $(document).on('click', '.komenti', function() {
                 });
             } else {
 
-                $('#comApp').append('<p>' + result.errori + '</p>');
+                $('#comApp').append('<p style="margin-bottom:200px; color:red;font-size:20px;">' + result.errori + '</p>');
 
             }
 
@@ -531,9 +531,9 @@ $(document).on('click', '.aprovimi', function() {
                 $('#comApp').append('<p>' + 'Comments are:' + '</p>');
                 $.each(lista, function(i, item) {
                     if (item.approveRefuse == true) {
-                        $('#comApp').append('<button style="background:green;">' + "Document is approved" + '</button>' + '</br>');
+                        $('#comApp').append('<button style="background:green;margin-bottom:200px;">' + "Document is approved" + '</button>' + '</br>');
                     } else {
-                        $('#comApp').append('<button style="background:red;">' + "Document is not approved" + '</button>' + '</br>');
+                        $('#comApp').append('<button style="background:red;margin-bottom:200px;">' + "Document is not approved" + '</button>' + '</br>');
                     }
 
 
@@ -546,7 +546,7 @@ $(document).on('click', '.aprovimi', function() {
                 });
             } else {
 
-                $('#comApp').append('<p>' + result.errori + '</p>');
+                $('#comApp').append('<p style="margin-bottom:200px;color:red;font-size:20px;">' + result.errori + '</p>');
 
             }
 
