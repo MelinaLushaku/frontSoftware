@@ -9,68 +9,68 @@
 </head>
 
 <body>
- <div class="shade">
-     <div class="header">
-             
-     <h1>AcademicDA</h1>
-     <h3>All your documents in one place</h3>
-    </div>
+    <div class="shade">
+        <div class="header">
 
-    <!----Qitu ja nis pjesa provv-->
-   
-    
-    <div class="col-sm-7" style="margin:20px 0px 20px 0px">
-      <button id="getAllCustomerId" type="button" class="btn btn-primary">Get All Customers</button>
+            <h1>AcademicDA</h1>
+            <h3>All your documents in one place</h3>
+        </div>
+
+        <!----Qitu ja nis pjesa provv-->
+
+
+        <div class="col-sm-7" style="margin:20px 0px 20px 0px">
+            <!--<button id="getAllCustomerId" type="button" class="btn btn-primary">Get All Customers</button>
      
       <div id="getResultDiv" style="padding:20px 10px 20px 50px" >
         
+        </div>-->
         </div>
-    </div>
-    
-  
-     <!----Qitu kryhet-->
 
-    <div class="container">
-        <div class="link-container">
-            <a id="firstA" href="#" onclick="changeForm(0)">Login</a>
-            <a href="#" onclick="changeForm(1)">Register</a>
+
+        <!----Qitu kryhet-->
+
+        <div class="container">
+            <div class="link-container">
+                <a id="firstA" href="#" onclick="changeForm(0)">Login</a>
+                <a href="#" onclick="changeForm(1)">Register</a>
+            </div>
+            <form id="mainForm" action="" method="post">
+                <div class="login forms form-style">
+                    <label for="">Username:</label>
+                    <input id="username" type="text" class="input" placeholder="username..." />
+                    <label for="">Password:</label>
+                    <input id="password" type="password" class="input" placeholder="password..." />
+                    <input id="submit" type="submit" class="input submit" value="Login" />
+                </div>
+                <div class="register forms hidden">
+
+                    <label for="">Name:</label>
+                    <input id="name2" type="text" class="input" placeholder="name..." />
+                    <label for="">Degree:</label>
+                    <input id="degree" type="text" class="input" placeholder="degree..." />
+                    <label for="">Email:</label>
+                    <input id="emaili" type="text" class="input" placeholder="email..." />
+
+                    <label for="">Password:</label>
+                    <input id="password2" type="text" class="input" placeholder="password..." />
+                    <label for="">UserName:</label>
+                    <input id="username2" type="text" class="input" placeholder="username..." />
+                    <input id="submitRegister" type="submit" class="input submit" value="Register" />
+                </div>
+
+            </form>
         </div>
-        <form id="mainForm" action="" method="post">
-            <div class="login forms form-style">
-                <label for="">Username:</label>
-                <input id="username" type="text" class="input" placeholder="username..." />
-                <label for="">Password:</label>
-                <input id="password" type="password" class="input" placeholder="password..." />
-                <input id="submit" type="submit" class="input submit" value="Login" />
-            </div>
-            <div class="register forms hidden">
-                
-                <label for="">Name:</label>
-                <input id = "name2"type="text" class="input" placeholder="name..." />
-                <label for="">Degree:</label>
-                <input id="degree" type="text" class="input" placeholder="degree..." />
-                <label for="">Email:</label>
-                <input id="emaili"type="text" class="input" placeholder="email..." />
-               
-                <label for="">Password:</label>
-                <input id = "password2"type="text" class="input" placeholder="password..." />
-                <label  for="">UserName:</label>
-                <input id="username2" type="text" class="input" placeholder="username..." />
-                <input id="submitRegister" type="submit" class="input submit" value="Register" />
-            </div>
-            
-        </form>
-    </div>
- 
-    <div class="footer">
-        <i>&copy;</i>
 
-        <h3>AcademicDA - Janar 2021</h3>
+        <div class="footer">
+            <i>&copy;</i>
+
+            <h3>AcademicDA - Janar 2021</h3>
+        </div>
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="main.js"></script>
+
     </div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
-    <script src="main.js"></script>
-    
-</div>
 </body>
 
 </html>

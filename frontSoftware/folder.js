@@ -481,10 +481,10 @@ $(document).on('click', '.komenti', function() {
 
             var lista = result.data;
             if (lista != null) {
-                $('#comApp').append('<p style="margin-bottom:200px;">' + 'Comments are:' + '</p>');
+                $('#comApp').append('<p style="color:#044A50;font-size:20px;">' + 'Comments are:' + '</p>');
                 $.each(lista, function(i, item) {
 
-                    $('#comApp').append('<p style="margin-bottom:200px;">' + item.description + '</p>' + ' Comment from: ' + '<p>' + item.createdBy + '</p>' + '</br>');
+                    $('#comApp').append('<p style="color:#044A50;font-size:30px;">' + item.description + '</p>' + '<p style="margin-top:5%;color:#044A50;font-size:20px;">' + ' Comment from: ' + '</p>' + '<p style="margin-bottom:200px;color:#044A50;font-size:30px;">' + item.createdBy + '</p>' + '</br>');
 
                     console.log("Success: ", item.name);
                     // var x =$("#folderattt"). value = item.folderID;
@@ -528,12 +528,12 @@ $(document).on('click', '.aprovimi', function() {
 
             var lista = result.data;
             if (lista != null) {
-                $('#comApp').append('<p>' + 'Comments are:' + '</p>');
+                $('#comApp').append('<p style="color:#044A50;font-size:20px;">' + 'Approved:' + '</p>');
                 $.each(lista, function(i, item) {
                     if (item.approveRefuse == true) {
-                        $('#comApp').append('<button style="background:green;margin-bottom:200px;">' + "Document is approved" + '</button>' + '</br>');
+                        $('#comApp').append('<button style="background:green;margin-bottom:200px;font-size:20px;color:white;">' + "Document is approved" + '</button>' + '</br>');
                     } else {
-                        $('#comApp').append('<button style="background:red;margin-bottom:200px;">' + "Document is not approved" + '</button>' + '</br>');
+                        $('#comApp').append('<button style="background:green;margin-bottom:200px;font-size:20px;color:white;">' + "Document is not approved" + '</button>' + '</br>');
                     }
 
 
