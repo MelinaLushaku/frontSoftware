@@ -294,6 +294,14 @@
             color: wheat;
         }
         
+        #getSpace {
+            height: 40px;
+            width: 80px;
+            border-color: wheat;
+            background-color: #044A50;
+            color: wheat;
+        }
+        
         .numberbtns {
             flex-direction: row;
         }
