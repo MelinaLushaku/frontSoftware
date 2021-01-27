@@ -269,9 +269,10 @@ $("#getFolders").click(function(e) {
                 if (y != null) {
                     $.each(y, function(i, item) {
 
-                        $('#getResultDiv2').append('<button style="color:#044A50;border-color:#044A50;width:100px;height:50px;"type="button" class="folderattt">' + item.name + '</button>' + '</br>');
+                        $('#getResultDiv2').append('<p>'+ item.folderID +':</p>'+'<button style="color:#044A50;border-color:#044A50;width:100px;height:50px;"type="button" class="folderattt">' + item.name + '</button>' + '</br>');
 
                         console.log("Success: ", item.name);
+                        console.log("Success: ", item.folderID);
                         document.getElementsByClassName("folderattt").val = item.folderID;
 
                         var x = document.getElementsByClassName("folderattt").val;

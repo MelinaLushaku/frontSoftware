@@ -62,7 +62,7 @@ $("#submit").click(function(e) {
             var y = res.errori;
             if (y == null) {
                 localStorage.setItem('document', JSON.stringify(res.data))
-                alert("Document eshte shtuar me sukses");
+                alert("Document has been added successfully");
                 goToDashboard();
             } else {
                 alert(res.errori);
