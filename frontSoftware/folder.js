@@ -108,7 +108,7 @@ $("#submit1").click(function(e) {
 
 
                     localStorage.setItem('folder', JSON.stringify(res))
-                    alert("Folder added successfully")
+                    alert("Folder added successfully!")
                     goToDashboard2();
                 } else {
                     alert(res.errori);
@@ -182,7 +182,7 @@ $("#deleteFol").click(function(e) {
             if (y == null) {
 
                 localStorage.setItem('folder', JSON.stringify(res))
-                alert("Folder has been deleted");
+                alert("Folder has been deleted!");
                 goToDashboard2();
             } else {
                 alert(res.errori);
@@ -225,7 +225,7 @@ $("#deleteDoc").click(function(e) {
             if (y == null) {
 
                 localStorage.setItem('document', JSON.stringify(res))
-                alert("Document has been deleted");
+                alert("Document has been deleted!");
                 goToDashboard2();
             } else {
                 alert(res.errori);
@@ -292,7 +292,7 @@ $("#getFolders").click(function(e) {
 
         })
     } else {
-        alert("Ju lutem specifikoni usernamen tuaj");
+        alert("Please specify your username!");
     }
 });
 /*$("#sortbyname").click(function(e) {
@@ -642,7 +642,7 @@ $("#foldernumber").click(function(e) {
 
         },
         error: function(e) {
-            alert("You havet specify your username!");
+            alert("You did not specify your username!");
             console.log("ERROR: ", e);
         }
 
@@ -731,7 +731,7 @@ $("#searchDocT").click(function(event) {
 
                     });
                 } else {
-                    alert("Nuk ekzison ndonje dokument me kete lloj: pdf,word ....");
+                    alert("Document of this type does not exist!");
                 }
             },
             error: function(request, status, error) {
